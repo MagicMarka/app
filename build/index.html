@@ -1,9 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
- <head> <meta charset="utf-8">
-    <title>MyApp</title>           
+ <head> 
+ 	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>App</title>           
   </head> 
   <body> 
+<!-- 						Topbar Start 							-->
+	<div class="top-bar">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-10 col-md-offset-2 primary-top-bar">
+					<span>Операции</span>
+					<a href="javascript: void(0);" class="btn btn-primary">Валюта </a>
+					<a href="javascript: void(0);" class="btn btn-primary">Новая операция + </a>
+					<div class="search-form">
+							<form>
+								<input class="form-control" placeholder="Поиск" type="text"> <button class="btn-search" type="button"><i class="fa fa-search"></i></button>
+							</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+<!--                        Topbar End                              -->
+		
+
+<!-- 						Navigation Start 						-->
+
+    <div class="main-sidebar-nav default-navigation">
+            <div class="nano">
+                <div class="nano-content sidebar-nav">
+                    <ul class="metisMenu nav flex-column" id="menu">
+						<div class="card-block border-bottom text-center nav-profile">
+                            <img alt="profile" class="rounded-circle margin-b-10 circle-border " src="http://www.tlc.lk/themes/TLC-front/front_theme/img/default_avatar_medium.png" width="80">
+                            <p class="lead margin-b-0 toggle-none">Клиент</p>
+                            <p class="text-muted mv-0 toggle-none">Добро пожаловать!</p>
+                        </div>
+						<li class="nav-item"><a class="nav-link" href="#">Новости </a></li>
+						<li class="nav-item"><a class="nav-link" href="#">Операции </a></li>	
+                        <li class="nav-item"><a class="nav-link" href="#">Звонки и чаты </a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Почта</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Настройки</a></li> 
+                        <li class="nav-item"><a class="nav-link" href="#">Выйти </a></li>               
+                        </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+    </div>
+<!-- 						Navigation End	 						-->
+
+
+
+        <!-- ============================================================== -->
+		<!-- 						Content Start	 						-->
+		<!-- ============================================================== -->
+        <section class="main-content container">
+
+            <div class="page-header">
+			  <h2>Операции</h2>
+			</div>
+			
+            <div class="row">
+               
+                 <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-heading card-default">
+                            Jsgrid Table
+                        </div>
+                        <div class="card-block">
+                          
+							<div id="jsGrid"></div>
+
+                         </div>
+                    </div>
+                </div>
+            </div>
+            
+        </section>
+        <!-- ============================================================== -->
+		<!-- 						Content End		 						-->
+		<!-- ============================================================== -->	
       <div id="app"></div> 
       
       <script src="./bundle.js"></script> 
