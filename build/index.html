@@ -47,15 +47,55 @@
             </div>
             
             <div class="row">
-               
                  <div class="col-md-12">
-                    <div class="card">
-                        <div class="card-block">
-                          
-                            <div id="jsGrid"></div>
-
-                         </div>
+                    <div class="row options">
+                <form>
+                    <input class="form-control search-options" placeholder="Описание" type="text"><i class="fa fa-search" aria-hidden="true"></i>
+                </form>
+                <form>
+                    <input class="form-control search-options" placeholder="Компания" type="text"><i class="fa fa-search" aria-hidden="true"></i>
+                </form> 
+                <form>
+                    <select class="form-control">
+                    <option disabled selected="">Статус</option>
+                    <option value="1">Принят</option>
+                    <option value="2">В обработке</option>
+                    <option value="3">Завершен</option>
+                </select>
+                </form> 
+                <form>
+                    <input class="form-control search-orders" placeholder="Order №" type="text">
+                </form>
+                <form>
+                    <select class="form-control">
+                    <option disabled selected="">Дата с</option>
+                    <option value="1">01.01</option>
+                    <option value="2">01.02</option>
+                    <option value="3">01.02</option>
+                </select>
+                </form> 
+                                <form>
+                    <select class="form-control">
+                    <option disabled selected="">Дата по</option>
+                    <option value="1">01.01</option>
+                    <option value="2">01.02</option>
+                    <option value="3">01.02</option>
+                </select>
+                </form>     
                     </div>
+                    <div class="row table-block">
+                        <table class="table table-striped"> 
+                            <thead> 
+                                <tr> <th><input id="checkBox" type="checkbox"></th> <th>Order №</th> <th>Дата</th> <th>Описание</th> <th>Д-т</th> <th>К-т</th> <th>Currency</th> <th>Rate</th> <th>Exchange</th> <th>Amount</th> <th>$0.00</th> <th>Comment</th><th>Chat</th><th>+</th></tr> 
+                            </thead> 
+                            <tbody> 
+                                <tr> <td><input id="checkBox" type="checkbox"></td> <th>10456</th> <td>10/12/2017</td> <td>Ставлю долар на свой баланс</td> <td>0.00</td> <td>0.00</td><td>UAH</td><td>26.73</td><td>26.68</td><td>10 896 765</td><td>26.68</td><td>Надо сделать сегодня</td><td><i class="fa fa-comments-o" aria-hidden="true"></i></td><td>+</td></tr> 
+                                <tr> <td><input id="checkBox" type="checkbox"></td> <th>10456</th> <td>10/12/2017</td> <td>Ставлю долар на свой баланс</td> <td>0.00</td> <td>0.00</td><td>UAH</td><td>26.73</td><td>26.68</td><td>10 896 765</td><td>26.68</td><td>Надо сделать сегодня</td><td>@fa-comments-o</td><td>+</td></tr> 
+                                <tr> <td><input id="checkBox" type="checkbox"></td> <th>10456</th> <td>10/12/2017</td> <td>Ставлю долар на свой баланс</td> <td>0.00</td> <td>0.00</td><td>UAH</td><td>26.73</td><td>26.68</td><td>10 896 765</td><td>26.68</td><td>Надо сделать сегодня</td><td>@</td><td>+</td></tr> 
+                            </tbody> 
+                        </table> 
+                        </div>
+
                 </div>
             </div>
 

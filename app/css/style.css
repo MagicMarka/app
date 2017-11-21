@@ -100,24 +100,44 @@ strong, b {
 .nav-link{
   color: #fff;
 }
-.nav-link:focus, .nav-link:hover {
+.nav-item .nav>li>a:focus,  .nav-item .nav>li>a:hover {
   color: #fff;
   background: #337ab7;
 }
 .page-heading {
   display: flex;
   justify-content: flex-start;
-  align-items: center;
-  padding: 20px;
+  padding-bottom: 10px;
   margin: 0;
+}
+.page-heading h2 {
+  margin: 5px 10px;
 }
 .btn.btn-rounded {
   border-radius: 20px;
   margin: 0 10px;
+  line-height: 2;
 }
 .form-control.search-form {
   border-radius: 20px;
   color: #337ab7;
   border-color: #337ab7;
-  float: right;
+  padding: 6px 12px;
+}
+
+.options {
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 26px;
+}
+.form-control.search-options {
+  width: 180px;
+  margin-right: 8px;
+}
+.form-control.search-orders {
+  width: 90px;
+  margin-right: 8px;
+}
+.options select {
+  margin-right: 8px;
 }
