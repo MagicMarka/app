@@ -65,6 +65,9 @@ strong, b {
   -webkit-transition: margin-left 0.3s;
   transition: margin-left 0.3s; }
 
+.default-logo {
+  display: none; }
+
 .admin-logo.dark-logo {
   background-color: #263238;
   border-bottom: 1px solid #3a454b; }
@@ -838,6 +841,195 @@ body.nav-collapsed .metisMenu .sub-menu .sub-menu.in {
   .btn-indigo:focus {
     color: #fff !important; }
 
+/* =============   Calender   ============= */
+#external-events h4 {
+  font-weight: 400;
+  font-size: 14px; }
+#external-events .fc-event {
+  background: #5867dd;
+  padding: 7px 10px;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  -ms-border-radius: 0px;
+  border-radius: 0px;
+  margin-bottom: 10px; }
+
+.fc-button {
+  color: inherit;
+  border: 1px solid #e4e5e7;
+  cursor: pointer;
+  display: inline-block;
+  height: 1.9em;
+  line-height: 1.9em;
+  overflow: hidden;
+  padding: 0 0.6em;
+  position: relative;
+  white-space: nowrap; }
+
+.fc-state-default {
+  background-color: #ffffff;
+  background-image: none;
+  background-repeat: repeat-x;
+  box-shadow: none;
+  color: inherit;
+  text-shadow: none; }
+
+.fc-state-active {
+  background-color: #5867dd;
+  border-color: #5867dd;
+  color: #ffffff; }
+
+.fc-center h2 {
+  font-weight: 300; }
+
+.fc-widget-header .fc-day-header {
+  padding: 12px 0;
+  background: #f5f5f5; }
+
+.fc-ltr .fc-basic-view .fc-day-number {
+  text-align: center; }
+
+.fc-event, .fc-agenda .fc-event-time, .fc-event a {
+  padding: 4px 6px;
+  background-color: #5867dd;
+  border-color: #5867dd; }
+
+/* =============   Card	  ============= */
+.card {
+  margin-bottom: 30px;
+  -webkit-box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.05);
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.05);
+  border: 0px;
+  border-radius: 3px; }
+
+.card-heading {
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  -ms-border-radius: 0px;
+  border-radius: 0px;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  -ms-border-radius: 0px;
+  padding: 0.9rem 1.25rem;
+  font-weight: 400;
+  text-transform: capitalize;
+  font-size: 18px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  border-bottom: 1px solid #eef5f9; }
+  .card-heading > p {
+    font-size: 13px;
+    text-transform: none;
+    font-weight: normal;
+    padding: 0px;
+    margin: 0px; }
+
+.card-group .card {
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  -ms-border-radius: 0px;
+  border-radius: 0px; }
+
+.card-block {
+  position: relative; }
+
+.card-search {
+  position: relative;
+  width: 170px;
+  float: right; }
+  .card-search .form-control {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    -ms-box-shadow: none;
+    box-shadow: none;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    border-radius: 2px;
+    font-size: 12px;
+    font-weight: 300; }
+  .card-search span {
+    position: absolute;
+    right: 10px;
+    top: 15px;
+    border: 0px;
+    font-size: 11px; }
+
+.card-footer {
+  padding: 10px 15px;
+  background: #fff; }
+
+.card-dropdown {
+  right: 0;
+  left: auto; }
+
+.card-default {
+  background-color: transparent;
+  border-bottom: 0px;
+  color: #455a64;
+  font-weight: 500; }
+  .card-default a.collapsed {
+    color: #666; }
+
+.card-primary {
+  border-color: #5867dd;
+  color: #fff;
+  background-color: #5867dd;
+  border-color: #5867dd; }
+  .card-primary a {
+    color: #fff; }
+
+.card-success {
+  border-color: #34bfa3;
+  color: #fff;
+  background-color: #34bfa3;
+  border-color: #34bfa3; }
+  .card-success a {
+    color: #fff; }
+
+.card-info {
+  border-color: #36a3f7;
+  color: #fff;
+  background-color: #36a3f7;
+  border-color: #36a3f7; }
+  .card-info a {
+    color: #fff; }
+
+.card-warning {
+  border-color: #ffb822;
+  color: #fff;
+  background-color: #ffb822;
+  border-color: #ffb822; }
+  .card-warning a {
+    color: #fff; }
+
+.card-danger {
+  border-color: #f4516c;
+  color: #fff;
+  background-color: #f4516c;
+  border-color: #f4516c; }
+  .card-danger a {
+    color: #fff; }
+
+.card-indigo {
+  border-color: #9816f4;
+  color: #fff;
+  background-color: #9816f4;
+  border-color: #9816f4; }
+  .card-indigo a {
+    color: #fff; }
+
+.card-teal {
+  border-color: #00c5dc;
+  color: #fff;
+  background-color: #00c5dc;
+  border-color: #00c5dc; }
+  .card-teal a {
+    color: #fff; }
+
+/* =============   Carousel  ============= */
+.carousel-inner > .item > a > img, .carousel-inner > .item > img {
+  width: 100%; }
 
 /* =============   Dropdown  ============= */
 .dropdown-menu {
@@ -875,7 +1067,34 @@ ul.dropdown-menu.top-dropdown {
   color: #5867dd;
   font-size: 13px; }
 
+/* =============   Float Chart  ============= */
+.flotTip {
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  -ms-border-radius: 0px;
+  border-radius: 0px;
+  background: #333 !important;
+  color: #fff !important;
+  border: 0px !important; }
 
+.flot-chart {
+  width: 100%;
+  height: 300px; }
+  .flot-chart .flot-chart-content {
+    width: 100%;
+    height: 100%; }
+
+/* =============   Footer	============= */
+.footer {
+  height: 40px;
+  bottom: 0px;
+  left: 0;
+  line-height: 40px;
+  position: absolute;
+  padding: 0px 15px;
+  width: 100%;
+  background-color: #fbfbfb;
+  border-top: 1px solid #e1e8ed; }
 
 /* =============   Background Color	============= */
 .white-bg {
@@ -1008,11 +1227,9 @@ input[type="text"], input[type="email"] {
   padding: 6px 12px;
   font-size: 14px;
   line-height: 1.42857143;
-  color: blue;
+  color: #555;
   background-color: #fff;
-  background-image: none; 
-  text-indent: 25px;
-}
+  background-image: none; }
 
 textarea {
   font-size: 13px;
@@ -2807,30 +3024,121 @@ ul.tabs-nav > li > a {
   left: 0;
   top: 0;
   width: 100%;
-  z-index: 999;
- }
-.primary-top-bar {
-  border-bottom: 1px solid #eee;
-  background: #fff; 
-}
-.top-bar.primary-top-bar .search-form i {
-    color: blue; }
+  z-index: 999; }
+
+.top-bar.primary-top-bar {
+  background: #5867dd; }
+  .top-bar.primary-top-bar .top-right-nav > li > a {
+    color: #fff; }
+    .top-bar.primary-top-bar .top-right-nav > li > a:hover {
+      color: #fff; }
+    .top-bar.primary-top-bar .top-right-nav > li > a img {
+      border: 2px solid rgba(0, 0, 0, 0.05); }
+  .top-bar.primary-top-bar .search-form i {
+    color: #fff; }
+  .top-bar.primary-top-bar .left-nav-toggle a {
+    color: #fff; }
+.top-bar.light-top-bar {
+  background: #fff;
+  -webkit-box-shadow: 1px 0 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 1px 0 20px rgba(0, 0, 0, 0.1); }
+  .top-bar.light-top-bar .top-right-nav > li > a {
+    color: #aaa; }
+    .top-bar.light-top-bar .top-right-nav > li > a:hover {
+      color: #23b7e5; }
+    .top-bar.light-top-bar .top-right-nav > li > a img {
+      border: 2px solid rgba(0, 0, 0, 0.05); }
 
 .top-bar.primary-top-bar .search-form .form-control::-webkit-input-placeholder {
-  color: blue; }
+  color: #fff; }
 
 .top-bar.primary-top-bar .search-form .form-control:-moz-placeholder {
-  color: blue; }
+  color: #fff; }
 
 .top-bar.primary-top-bar .search-form .form-control::-moz-placeholder {
-  color: blue; }
+  color: #fff; }
 
 .top-bar.primary-top-bar .search-form .form-control:-ms-input-placeholder {
-  color: blue; }
+  color: #fff; }
+
+.admin-logo {
+  display: block;
+  margin-left: -15px;
+  float: left;
+  width: 240px;
+  text-align: center;
+  padding-left: 0px;
+  height: 60px;
+  line-height: 60px;
+  background: #fff;
+  -moz-transition: all 0.0s;
+  -o-transition: all 0.0s;
+  -webkit-transition: all 0.0s;
+  transition: all 0.0s; }
+  .admin-logo h1 {
+    color: #fff;
+    font-size: 28px;
+    line-height: 60px;
+    text-transform: uppercase;
+    font-weight: 800;
+    margin: 0px; }
+  .admin-logo > .default {
+    display: none; }
+  .admin-logo sub {
+    font-size: 10px;
+    font-style: italic;
+    color: #fff;
+    opacity: 0.8;
+    font-weight: 300; }
+
+.top-right-nav {
+  margin: 0;
+  padding: 0;
+  float: right;
+  padding-right: 0px; }
+  .top-right-nav > li {
+    display: block;
+    float: left;
+    position: relative;
+    padding: 0px; }
+    .top-right-nav > li i {
+      vertical-align: middle;
+      display: inline-block;
+      margin-left: 0;
+      font-size: 16px; }
+    .top-right-nav > li > a {
+      display: block;
+      line-height: 60px;
+      padding: 0px 15px;
+      color: #fff; }
+      .top-right-nav > li > a img {
+        border: 2px solid rgba(255, 255, 255, 0.5);
+        margin-right: 0px;
+        width: 35px; }
+
+.icon-dropdown .badge {
+  position: absolute;
+  top: 13px;
+  right: 22px;
+  border-radius: 20px; }
+
+.left-nav-toggle, .left-nav-collapsed {
+  margin-left: 0px;
+  line-height: 60px;
+  float: left; }
+
+.left-nav-toggle a, .left-nav-collapsed a {
+  display: block;
+  color: #fff;
+  font-size: 15px;
+  width: 50px;
+  height: 60px;
+  line-height: 60px;
+  text-align: center; }
 
 .search-form {
-  display: inline-block;
-  float: right;
+  display: block;
+  float: left;
   position: relative;
   margin-left: 30px;
   margin-top: 13px; }
@@ -2842,20 +3150,20 @@ ul.tabs-nav > li > a {
     -moz-box-shadow: none;
     -ms-box-shadow: none;
     box-shadow: none;
-    border: 1px solid #blue;
+    border: 1px solid rgba(255, 255, 255, 0.2);
     height: 34px;
-    color: blue; }
+    color: #fff; }
     .search-form .form-control:focus {
       background-color: rgba(255, 255, 255, 0.5); }
     .search-form .form-control::-webkit-input-placeholder, .search-form .form-control:-moz-placeholder, .search-form .form-control::-moz-placeholder, .search-form .form-control:-ms-input-placeholder {
-      color: blue; }
+      color: #fff; }
   .search-form .btn-search {
     position: absolute;
-    left: 15px;
+    right: 15px;
     top: 5px;
     border: 0;
     background: transparent;
-    color: blue;
+    color: #fff;
     padding: 0; }
 
 .light-top-bar .left-nav-toggle a, .light-top-bar .left-nav-collapsed a {
@@ -3807,6 +4115,8 @@ figure {
     .top-bar.primary-top-bar {
       background: #fff; }
 
+  .search-form.hidden-xs, .search-form.hidden-md {
+    display: none; }
 
   .top-bar.primary-top-bar .top-right-nav > li > a, .top-bar.primary-top-bar .left-nav-toggle a {
     color: #455a64; }
@@ -3888,3 +4198,5 @@ figure {
 
   .ui-dialog {
     width: 90% !important; } }
+
+/*# sourceMappingURL=style.css.map */
