@@ -55,7 +55,7 @@ strong, b {
 
 .main-content.container {
   min-height: 100vh;
-  padding: 30px;
+  padding: 10px 30px;
   position: relative;
   margin-left: 240px;
   -moz-transition: margin-left 0.3s;
@@ -85,6 +85,7 @@ strong, b {
   background: #272727;
   z-index: 99; 
 }
+
 .nav-profile {
   display: flex;
   justify-content: space-around;
@@ -97,32 +98,45 @@ strong, b {
 .nav-profile .name {
   color: #fff;
 }
-.nav-link{
+.nav-item a.nav-link{
   color: #fff;
+  padding: 12px 10px 12px 40px;
 }
-.nav-item .nav>li>a:focus,  .nav-item .nav>li>a:hover {
+ li.nav-item a:hover, li.nav-item a:active {
   color: #fff;
-  background: #337ab7;
+  background: #337ab7 !important;
 }
 .page-heading {
   display: flex;
   justify-content: flex-start;
+  align-items: center;
   padding-bottom: 10px;
   margin: 0;
 }
+.page-heading :last-child {
+  margin-left: auto;
+}
 .page-heading h2 {
   margin: 5px 10px;
+  font-size: 25px;
+  font-weight: 700;
 }
 .btn.btn-rounded {
   border-radius: 20px;
   margin: 0 10px;
-  line-height: 2;
+  line-height: 1;
+  height: 34px;
+  padding: 10px 20px;
+}
+form {
+  position: relative;
 }
 .form-control.search-form {
   border-radius: 20px;
   color: #337ab7;
   border-color: #337ab7;
-  padding: 6px 12px;
+  padding: 14px 20px;
+  line-height: 1;
 }
 
 .options {
@@ -140,4 +154,18 @@ strong, b {
 }
 .options select {
   margin-right: 8px;
+}
+.search-btn {
+  background: transparent;
+  border: none;
+  outline: none;
+  position: absolute;
+  top:5px;
+  right: 10px;
+}
+.fa-search {
+  color: #337ab7;
+}
+th {
+  color: #ddd;
 }

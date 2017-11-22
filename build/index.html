@@ -3,6 +3,7 @@
  <head> 
  	<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>App</title>           
   </head> 
@@ -18,7 +19,7 @@
                             <p class="name">Клиент</p>
                         </div>
                         <li class="nav-item"><a class="nav-link" href="news.html">Новости</a></li>
-                        <li class="nav-item"><a class="nav-link" href="index.html">Операции</a></li>
+                        <li class="nav-item"><a class="nav-link" active href="index.html">Операции</a></li>
                         <li class="nav-item"><a class="nav-link" href="page-calendar.html">Календарь</a></li>                     
                         <li class="nav-item"><a class="nav-link" href="#">Звонки и чаты</a></li>                      
                         <li class="nav-item"><a class="nav-link" href="javascript: void(0);" aria-expanded="true">Почта</a></li>
@@ -39,21 +40,22 @@
 
             <div class="page-heading">
               <h2>Операции</h2>
-              <a href="#" class="btn btn-primary btn-rounded">Валюта: UAH</a>
+              <a href="#" class="btn btn-primary btn-rounded">Валюта: UAH <i class="fa fa-ellipsis-v" aria-hidden="true"></i></a>
               <a href="#" class="btn btn-primary btn-rounded">Новая операция +</a>
                 <form>
-                    <input class="form-control search-form" placeholder="Поиск" type="text">
+                    <input class="form-control search-form" placeholder="Поиск" type="text"><button type="submit" class="search-btn"><i class="fa fa-search" aria-hidden="true"></i></button>
                 </form>
+
             </div>
             
             <div class="row">
                  <div class="col-md-12">
                     <div class="row options">
                 <form>
-                    <input class="form-control search-options" placeholder="Описание" type="text"><i class="fa fa-search" aria-hidden="true"></i>
+                    <input class="form-control search-options" placeholder="Описание" type="text"><button type="submit" class="search-btn"><i class="fa fa-search" aria-hidden="true"></i></button>
                 </form>
                 <form>
-                    <input class="form-control search-options" placeholder="Компания" type="text"><i class="fa fa-search" aria-hidden="true"></i>
+                    <input class="form-control search-options" placeholder="Компания" type="text"><button type="submit" class="search-btn"><i class="fa fa-search" aria-hidden="true"></i></button>
                 </form> 
                 <form>
                     <select class="form-control">
@@ -83,18 +85,7 @@
                 </select>
                 </form>     
                     </div>
-                    <div class="row table-block">
-                        <table class="table table-striped"> 
-                            <thead> 
-                                <tr> <th><input id="checkBox" type="checkbox"></th> <th>Order №</th> <th>Дата</th> <th>Описание</th> <th>Д-т</th> <th>К-т</th> <th>Currency</th> <th>Rate</th> <th>Exchange</th> <th>Amount</th> <th>$0.00</th> <th>Comment</th><th>Chat</th><th>+</th></tr> 
-                            </thead> 
-                            <tbody> 
-                                <tr> <td><input id="checkBox" type="checkbox"></td> <th>10456</th> <td>10/12/2017</td> <td>Ставлю долар на свой баланс</td> <td>0.00</td> <td>0.00</td><td>UAH</td><td>26.73</td><td>26.68</td><td>10 896 765</td><td>26.68</td><td>Надо сделать сегодня</td><td><i class="fa fa-comments-o" aria-hidden="true"></i></td><td>+</td></tr> 
-                                <tr> <td><input id="checkBox" type="checkbox"></td> <th>10456</th> <td>10/12/2017</td> <td>Ставлю долар на свой баланс</td> <td>0.00</td> <td>0.00</td><td>UAH</td><td>26.73</td><td>26.68</td><td>10 896 765</td><td>26.68</td><td>Надо сделать сегодня</td><td>@fa-comments-o</td><td>+</td></tr> 
-                                <tr> <td><input id="checkBox" type="checkbox"></td> <th>10456</th> <td>10/12/2017</td> <td>Ставлю долар на свой баланс</td> <td>0.00</td> <td>0.00</td><td>UAH</td><td>26.73</td><td>26.68</td><td>10 896 765</td><td>26.68</td><td>Надо сделать сегодня</td><td>@</td><td>+</td></tr> 
-                            </tbody> 
-                        </table> 
-                        </div>
+                    <div class="row" id="table-block"></div>
 
                 </div>
             </div>
