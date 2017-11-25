@@ -1,19 +1,36 @@
 import React from 'react';
 
-function Toolbar() {
-	
+export default ({ term, data, update }) => {
+
+  const Search = e => {
+    const value = e.target.value.toLowerCase();
+
+    const filter = data.filter(order => {
+      return order.OrderDescription.toLowerCase().includes(value);
+    });
+
+    update({
+      data: filter,
+      active: 0,
+      term: value
+    });
+    
+  };
+
+
 	return (
             <div className="row">
                  <div className="col-md-12">
                     <div className="row options">
-                        <form>
-                            <input className="form-control search-options" placeholder="Описание" type="text"/>
-                            <button type="submit" className="search-btn"><i className="fa fa-search" aria-hidden="true"></i></button>
-                        </form>
-                        <form>
-                            <input className="form-control search-options" placeholder="Компания" type="text"/>
-                            <button type="submit" className="search-btn"><i className="fa fa-search" aria-hidden="true"></i></button>
-                        </form> 
+                    <form>
+                     <input className="form-control search-options" value={term} type="text" className="form-control" placeholder="Описание" onChange={Search} />
+                     <button type="submit" className="search-btn"><i className="fa fa-search" aria-hidden="true"></i></button>
+                     </form>
+                    <form>
+                     <input className="form-control search-options" value={term} type="text" className="form-control" placeholder="Компания" onChange={Search} />
+                     <button type="submit" className="search-btn"><i className="fa fa-search" aria-hidden="true"></i></button>
+                     </form>       
+                       
                         <form>
                             <select className="form-control">
                                 <option disabled selected>Статус</option>
@@ -47,5 +64,3 @@ function Toolbar() {
         	
     );
 }
-
-export default Toolbar;

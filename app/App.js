@@ -3,6 +3,7 @@ import './css/style.css';
 import Toolbar from './components/Toolbar';
 import Table from './components/Table';
 import Search from './components/Search';
+import Top from './components/Top';
 import load from './utils/load';
 
 
@@ -14,7 +15,8 @@ class App extends Component {
     this.state = {
       data: null,
       active: 0,
-      term: ''
+      term: '',
+      showModal: false
     };
 
     this.loadData();
@@ -22,7 +24,7 @@ class App extends Component {
 
   loadData() {
     load(this.props.data).then(orders => {
- this.initialData = JSON.parse(orders);
+    this.initialData = JSON.parse(orders);
     this.setState({
       data: this.initialData
     });
@@ -38,9 +40,9 @@ class App extends Component {
     render() {
         return (
             <div className="app">
-            <Search term={this.state.term} data={this.initialData} update={this.updateData.bind(this)} />
-            	<Toolbar />
-            	<Table data={this.state.data} update={this.updateData.bind(this)} />
+        <Top />
+				<Toolbar term={this.state.term} data={this.initialData} update={this.updateData.bind(this)} />
+        <Table data={this.state.data} update={this.updateData.bind(this)} />
             </div>
         );
     }

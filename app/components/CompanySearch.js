@@ -1,3 +1,4 @@
+
 import React from 'react';
 
 export default ({ term, data, update }) => {
@@ -6,7 +7,7 @@ export default ({ term, data, update }) => {
     const value = e.target.value.toLowerCase();
 
     const filter = data.filter(order => {
-      return order.OrderDescription.toLowerCase().includes(value);
+      return order.OrderCompany.toLowerCase().includes(value);
     });
 
     update({
@@ -23,7 +24,7 @@ export default ({ term, data, update }) => {
         value={term}
         type="text"
         className="form-control"
-        placeholder="Описание"
+        placeholder="Компания"
         onChange={dataSearch}
       />
     </div>
