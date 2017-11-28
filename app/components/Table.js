@@ -1,5 +1,5 @@
 import React from 'react';
-import Row from './Row';
+import Row from './Row.js';
 
 export default ({ data, update }) => {
 	 if (!data) { return (<p>Loading...</p>); }

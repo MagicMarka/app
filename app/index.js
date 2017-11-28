@@ -10,4 +10,5 @@ import 'font-awesome/css/font-awesome.css';
 import './css/style.css';
 import App from './App';
 
+
 ReactDOM.render(<App data='data.json' />, document.getElementById('root'));

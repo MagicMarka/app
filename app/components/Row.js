@@ -3,7 +3,6 @@ import React from 'react';
 function Row({ order, update, index })  {
 
 	return (
-        	 
                 <tr><td><input id="checkBox" type="checkbox"/></td> 
                 <td>{order.OrderNumber}</td> 
                 <td>{order.OrderDate}</td> 

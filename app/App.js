@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import './css/style.css';
+import load from './utils/load';
 import Toolbar from './components/Toolbar';
 import Table from './components/Table';
 import Search from './components/Search';
 import Top from './components/Top';
-import load from './utils/load';
-
 
 
 class App extends Component {
@@ -15,8 +14,7 @@ class App extends Component {
     this.state = {
       data: null,
       active: 0,
-      term: '',
-      showModal: false
+      term: ''
     };
 
     this.loadData();
@@ -41,7 +39,7 @@ class App extends Component {
         return (
             <div className="app">
         <Top />
-				<Toolbar term={this.state.term} data={this.initialData} update={this.updateData.bind(this)} />
+        <Toolbar term={this.state.term} data={this.initialData} update={this.updateData.bind(this)} />
         <Table data={this.state.data} update={this.updateData.bind(this)} />
             </div>
         );
