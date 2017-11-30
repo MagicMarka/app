@@ -197,3 +197,49 @@ form {
   padding: 14px 20px;
   line-height: 1;
 }
+.modal-container {
+  position: relative;
+}
+.modal-container .modal, .modal-container .modal-backdrop {
+  position: absolute;
+}
+.main-modal.modal-dialog {
+  width: 800px;
+}
+.container {
+  width: 100%;
+}
+span.close {
+  position: absolute;
+  top: 27px;
+  right: 30px;
+  font-size: 14px;
+  color: #000000;
+}
+.button-block {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  align-items: center;
+}
+.button-block .btn-group {
+  width: 155px;
+}
+.button-block .btn-group .btn {
+  width: 50%;
+}
+.main-form {
+  width: 70%;
+}
+.main-form label {
+  font-size: 12px;
+  color: #666666;
+}
+#placement {
+  position: relative;
+}
+.fa.tooltip {
+  position: absolute;
+  top: 0;
+  right: 3px;
+}

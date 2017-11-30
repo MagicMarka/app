@@ -32,27 +32,31 @@ export default class ModalPopup extends React.Component {
         return (
         <Modal show={this.state.showModal} onHide={this.hideModal}>
                     <Modal.Header>
-                        <Modal.Title><h3>Операция № 131/4 от 27.19.2017 </h3></Modal.Title>
+                        <Modal.Title><h4>Операция № 131/4 от 27.19.2017 </h4></Modal.Title>
                         <span onClick={this.hideModal}>Закрыть</span>
                     </Modal.Header>
                     <Modal.Body>
-                    <Col md={6}>
-                    <h4>Направление операции:</h4>
-                    <ButtonGroup>
-                    <Button bsStyle="primary">Отдаю</Button>
-                    <Button>Получаю</Button>
-                    </ButtonGroup>
-                    <h4>Форма оплаты:</h4>
-                    <ButtonGroup>
-                    <Button>Нал</Button>
-                    <Button>Безнал</Button>
-                    </ButtonGroup>
-                    </Col>
-                    <Col  md={6} >
-                      <form>
-                        <input className="form-control " type="text" placeholder="A108.8"/>
-                      </form>
-                    </Col>
+                        <div className="container">
+                        <div className="row">
+                            <div className="col-md-6">
+                                Направление операции:
+                                <ButtonGroup>
+                                    <Button bsStyle="primary">Отдаю</Button>
+                                    <Button>Получаю</Button>
+                                </ButtonGroup>
+                                <h4>Форма оплаты:</h4>
+                                <ButtonGroup>
+                                    <Button>Нал</Button>
+                                    <Button bsStyle="primary">Безнал</Button>
+                                </ButtonGroup>
+                            </div>
+                            <div className="col-md-6">
+                                <form>
+                                    <input className="form-control " type="text" placeholder="A108.8"/>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
                     </Modal.Body>
                     <Modal.Footer>
                         <Button bsStyle="primary"><i className="fa fa-info-circle" aria-hidden="true"></i> Добавить задачу </Button>

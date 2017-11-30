@@ -3,7 +3,6 @@ import './css/style.css';
 import load from './utils/load';
 import Toolbar from './components/Toolbar';
 import Table from './components/Table';
-import Search from './components/Search';
 import Top from './components/Top';
 
 
