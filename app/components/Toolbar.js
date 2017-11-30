@@ -1,36 +1,60 @@
 import React from 'react';
+import DatePicker from 'react-datepicker'
+import 'react-datepicker/dist/react-datepicker.css';
 
-export default ({ term, data, update }) => {
+export default class Toolbar extends React.Component {
 
-  const Search = e => {
-    const value = e.target.value.toLowerCase();
+    constructor (props, { term, data, update }) {
+        super(props);
+        this.state = {
+            startDate: null
+        };
+        this.handleChangeStart = this.handleChangeStart.bind(this);
+        this.handleChangeEnd = this.handleChangeEnd.bind(this);
+        this.term = term;
+        this.data = data;
+        this.update = update;
+    }
+    handleChangeStart(date) {
+        this.setState({
+            startDate: date,
+        });
+    }
+    handleChangeEnd(date) {
+        this.setState({
+            endDate: date
+        });
+    }
 
-    const filter = data.filter(order => {
-      return order.OrderDescription.toLowerCase().includes(value);
-    });
+    searchDescription(e) {
+        const value = e.target.value.toLowerCase();
 
-    update({
-      data: filter,
-      active: 0,
-      term: value
-    });
-    
-  };
+        const filter = this.data.filter(order => {
+            return order.OrderDescription.toLowerCase().includes(value);
+        });
 
+        this.update({
+            data: filter,
+            active: 0,
+            term: value
+        });
 
-	return (
+    };
+
+    render() {
+        return(
             <div className="row">
-                 <div className="col-md-12">
+                <div className="col-md-12">
                     <div className="row options">
-                    <form>
-                     <input className="form-control search-options" value={term} type="text" className="form-control" placeholder="Описание" onChange={Search} />
-                     <button type="submit" className="search-btn"><i className="fa fa-search" aria-hidden="true"></i></button>
-                     </form>
-                    <form>
-                     <input className="form-control search-options" value={term} type="text" className="form-control" placeholder="Компания" onChange={Search} />
-                     <button type="submit" className="search-btn"><i className="fa fa-search" aria-hidden="true"></i></button>
-                     </form>       
-                       
+                        <form>
+                            <input className="form-control search-options" value={this.term} type="text" placeholder="Описание" onChange={this.searchDescription()} />
+                            <button type="submit" className="search-btn"><i className="fa fa-search" aria-hidden="true"></i></button>
+                        </form>
+                        {/*<form>*/}
+                            {/*<input className="form-control search-options" value={term} type="text" placeholder="Компания" onChange={this.search} />*/}
+                            {/*<button type="submit" className="search-btn"><i className="fa fa-search" aria-hidden="true"></i></button>*/}
+                        {/*</form>*/}
+
                         <form>
                             <select className="form-control">
                                 <option disabled selected>Статус</option>
@@ -38,29 +62,37 @@ export default ({ term, data, update }) => {
                                 <option value="2">В обработке</option>
                                 <option value="3">Завершен</option>
                             </select>
-                        </form> 
+                        </form>
                         <form>
                             <input className="form-control search-orders" placeholder="Order №" type="text"/>
                         </form>
-                        <form>
-                            <select className="form-control">
-                                <option disabled selected>Дата с</option>
-                                <option value="1">01.01</option>
-                                <option value="2">01.02</option>
-                                <option value="3">01.02</option>
-                            </select>
-                        </form> 
-                        <form>
-                            <select className="form-control">
-                                <option disabled selected>Дата по</option>
-                                <option value="1">01.01</option>
-                                <option value="2">01.02</option>
-                                <option value="3">01.02</option>
-                            </select>
-                        </form>     
+
+                        <DatePicker
+                            className='form-control'
+                            selected={this.state.startDate}
+                            selectsStart
+                            startDate={this.state.startDate}
+                            endDate={this.state.endDate}
+                            onChange={this.handleChangeStart}
+                            placeholderText="Дата с"
+                            locale="ru"
+
+                        />
+
+                        <DatePicker
+                            className='form-control'
+                            selected={this.state.endDate}
+                            selectsEnd
+                            startDate={this.state.startDate}
+                            endDate={this.state.endDate}
+                            onChange={this.handleChangeEnd}
+                            placeholderText="Дата до"
+                            locale="ru"
+
+                        />
                     </div>
                 </div>
             </div>
-        	
-    );
+        )
+    }
 }
