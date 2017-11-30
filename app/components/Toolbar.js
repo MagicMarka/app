@@ -14,6 +14,7 @@ export default class Toolbar extends React.Component {
         this.term = term;
         this.data = data;
         this.update = update;
+
     }
     handleChangeStart(date) {
         this.setState({
@@ -47,7 +48,7 @@ export default class Toolbar extends React.Component {
                 <div className="col-md-12">
                     <div className="row options">
                         <form>
-                            <input className="form-control search-options" value={this.term} type="text" placeholder="Описание" onChange={this.searchDescription()} />
+                            <input className="form-control search-options" value={this.term} type="text" placeholder="Описание" onChange={this.searchDescription} />
                             <button type="submit" className="search-btn"><i className="fa fa-search" aria-hidden="true"></i></button>
                         </form>
                         {/*<form>*/}
