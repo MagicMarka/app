@@ -7,6 +7,7 @@ export default class Top extends React.Component {
         this.state = {showModal: false};
         this.showModal = this.showModal.bind(this);
         this.hideModal = this.hideModal.bind(this);
+
     }
 
     showModal() {
@@ -16,7 +17,6 @@ export default class Top extends React.Component {
     hideModal() {
         this.setState({showModal: false});
     }
-
     render() {
         const popover = (
             <Popover id="modal-popover" title="popover">
@@ -38,11 +38,11 @@ export default class Top extends React.Component {
             </form>
             <Modal show={this.state.showModal} onHide={this.hideModal} dialogClassName="main-modal">
                 <Modal.Header>
-                    <Modal.Title><h4>Операция № 131/4 от 27.19.2017 </h4></Modal.Title>
+                    <Modal.Title>Операция № 131/4 от 27.19.2017 </Modal.Title>
                     <span className="close" onClick={this.hideModal}>Закрыть</span>
                 </Modal.Header>
                 <Modal.Body>
-
+                    <Row>
                             <Col md={6}>
                                 <div className="button-block">
                                 <label>Направление операции:</label>
@@ -84,23 +84,25 @@ export default class Top extends React.Component {
                                 </div>
                             </Col>
                             <Col md={6}>
-                                <Form inline>
+                                <Form inline className="client-tag">
                                     <FormGroup controlId="formInlineName">
                                         <ControlLabel>Тег клиента</ControlLabel>
                                         <FormControl type="text" placeholder="А101.8" />
                                     </FormGroup>
                                 </Form>
-                            <FormGroup controlId="formControlsTextarea">
+                            <FormGroup controlId="formControlsTextarea" className="comment-form">
                                 <ControlLabel>Примечание</ControlLabel>
                                 <FormControl componentClass="textarea" placeholder="Текст примечания" />
                             </FormGroup>
                             </Col>
+                    </Row>
                     </Modal.Body>
+            <Modal.Footer className="footer-modal">
                     <Row>
                         <Button bsStyle="primary"><i className="fa fa-info-circle" aria-hidden="true"></i> Добавить задачу </Button>
                         <Button bsStyle="primary"><i className="fa fa-envelope-o" aria-hidden="true"></i> Поставить задачу </Button>
                     </Row>
-
+            </Modal.Footer>
 
             </Modal>
         </div>

@@ -37,9 +37,9 @@ class App extends Component {
     render() {
         return (
             <div className="app">
-        <Top />
-        <Toolbar term={this.state.term} data={this.initialData} update={this.updateData.bind(this)} />
-        <Table data={this.state.data} update={this.updateData.bind(this)} />
+                <Top />
+                <Toolbar term={this.state.term} data={this.initialData} update={this.updateData.bind(this)} />
+                <Table data={this.state.data} update={this.updateData.bind(this)} />
             </div>
         );
     }

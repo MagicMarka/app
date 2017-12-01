@@ -27,7 +27,7 @@ export default ({ term, data, update }) => {
                      <button type="submit" className="search-btn"><i className="fa fa-search" aria-hidden="true"></i></button>
                      </form>
                     <form>
-                     <input className="form-control search-options" value={term} type="text" className="form-control" placeholder="Компания" onChange={Search} />
+                     <input className="form-control search-options"  type="text" className="form-control" placeholder="Компания" />
                      <button type="submit" className="search-btn"><i className="fa fa-search" aria-hidden="true"></i></button>
                      </form>       
                        
