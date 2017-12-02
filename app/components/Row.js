@@ -7,7 +7,8 @@ function Row({ order, update, index })  {
                 <td>{order.OrderNumber}</td> 
                 <td>{order.OrderDate}</td> 
                 <td>{order.OrderDescription}</td> 
-                <td>0.00</td> 
+                <td>{order.OrderStatus}</td>
+                <td>0.00</td>
                 <td>0.00</td>
                 <td>UAH</td>
                 <td>26.73</td>

@@ -4,18 +4,20 @@ import 'react-datepicker/dist/react-datepicker.css';
 
 export default class Toolbar extends React.Component {
 
-    constructor (props, { term, data, update }) {
+    constructor (props) {
         super(props);
+
         this.state = {
             startDate: null
         };
         this.handleChangeStart = this.handleChangeStart.bind(this);
         this.handleChangeEnd = this.handleChangeEnd.bind(this);
-        this.term = term;
-        this.data = data;
-        this.update = update;
+        this.searchDescription = this.searchDescription.bind(this);
+        this.searchOrderNumber = this.searchOrderNumber.bind(this);
+        this.searchOrderStatus = this.searchOrderStatus.bind(this);
 
     }
+
     handleChangeStart(date) {
         this.setState({
             startDate: date,
@@ -25,47 +27,73 @@ export default class Toolbar extends React.Component {
         this.setState({
             endDate: date
         });
+        console.log(Date.time())
     }
 
-    searchDescription(e) {
-        const value = e.target.value.toLowerCase();
 
-        const filter = this.data.filter(order => {
+    searchDescription(e) {
+        let data = this.props.data;
+        let value = e.target.value.toLowerCase();
+
+        let filter = data.filter(order => {
             return order.OrderDescription.toLowerCase().includes(value);
         });
-
-        this.update({
+        this.props.update({
             data: filter,
             active: 0,
             term: value
         });
+    };
 
+    searchOrderNumber(e) {
+        let data = this.props.data;
+        let value = e.target.value;
+
+        let filter = data.filter(order => {
+            return order.OrderNumber.includes(value);
+        });
+        this.props.update({
+            data: filter,
+            active: 0,
+            term: value
+        });
+    };
+
+    searchOrderStatus(e) {
+        let data = this.props.data;
+        let value = e.target.value.toLowerCase();
+
+        let filter = data.filter(order => {
+            return order.OrderStatus.toLowerCase().includes(value);
+        });
+        this.props.update({
+            data: filter,
+            active: 0,
+            term: value
+        });
     };
 
     render() {
         return(
             <div className="row">
+                <div>{this.data}</div>
                 <div className="col-md-12">
                     <div className="row options">
                         <form>
                             <input className="form-control search-options" value={this.term} type="text" placeholder="Описание" onChange={this.searchDescription} />
                             <button type="submit" className="search-btn"><i className="fa fa-search" aria-hidden="true"></i></button>
                         </form>
-                        {/*<form>*/}
-                            {/*<input className="form-control search-options" value={term} type="text" placeholder="Компания" onChange={this.search} />*/}
-                            {/*<button type="submit" className="search-btn"><i className="fa fa-search" aria-hidden="true"></i></button>*/}
-                        {/*</form>*/}
-
                         <form>
-                            <select className="form-control">
+                            <select className="form-control" onChange={this.searchOrderStatus}>
                                 <option disabled selected>Статус</option>
-                                <option value="1">Принят</option>
-                                <option value="2">В обработке</option>
-                                <option value="3">Завершен</option>
+                                <option value={this.term}>Принят</option>
+                                <option value={this.term}>В обработке</option>
+                                <option value={this.term}>Завершен</option>
                             </select>
                         </form>
                         <form>
-                            <input className="form-control search-orders" placeholder="Order №" type="text"/>
+                            <input className="form-control search-options" value={this.term} type="text" placeholder="Номер заказа" onChange={this.searchOrderNumber} />
+                            <button type="submit" className="search-btn"><i className="fa fa-search" aria-hidden="true"></i></button>
                         </form>
 
                         <DatePicker
