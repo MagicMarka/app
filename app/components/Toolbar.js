@@ -27,7 +27,6 @@ export default class Toolbar extends React.Component {
         this.setState({
             endDate: date
         });
-        console.log(Date.time())
     }
 
 
