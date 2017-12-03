@@ -1,7 +1,7 @@
 
 /* =============   Common	============= */
 body {
-  font-family: "Rubik", sans-serif;
+  font-family: 'Roboto', sans-serif !important;
   color: #455a64;
   font-size: 14px;
   font-weight: 400;
@@ -173,7 +173,7 @@ form {
   color: #337ab7;
 }
 th {
-  color: #ddd;
+  color: rgb(84,98,111);
 }
 .page-heading h2 {
   margin: 5px 10px;
@@ -186,6 +186,7 @@ th {
   line-height: 1;
   height: 34px;
   padding: 10px 20px;
+  background: rgb(34,112,255);
 }
 form {
   position: relative;
@@ -219,33 +220,44 @@ span.close {
 .button-block {
   display: flex;
   justify-content: space-between;
-  padding: 10px 0;
   align-items: center;
 }
-.button-block .btn-group {
-  width: 155px;
+.button-block .btn-toolbar .btn-group{
+  width: 178px;
+  height: auto;
+  margin: 0;
 }
 .button-block .btn-group .btn {
   width: 50%;
+
+}
+.button-block button.btn.btn-primary, .btn-default.active {
+  background: rgb(34,112,255) !important;
+  color: #fff !important;
 }
 .main-form {
-  width: 70%;
   margin-bottom: 15px;
+}
+.main-form span {
+  font-size: 12px;
+}
+.main-form .form-control {
+  width: 60%;
+  display: inline-block;
+}
+.main-form .form-control#sum {
+  width: 54%;
 }
 .main-form label, .comment-form label {
   font-size: 12px;
-  color: #666666;
+  color: rgb(84,98,111);
+  display: block;
 }
 .main-form .form-group {
   margin-bottom: 0;
 }
-#placement {
-  position: relative;
-}
-.fa.tooltip {
-  position: absolute;
-  top: 0;
-  right: 3px;
+.main-form .btn-group {
+  margin-left: 10px;
 }
 .modal-footer.footer-modal {
   text-align: center;
@@ -268,4 +280,13 @@ span.close {
 }
 .comment-form textarea.form-control {
   height: 100%;
+}
+.btn-toolbar {
+  display: inline-block;
+
+}
+.btn-toolbar .btn-group{
+  display: inline-block;
+  height: 34px;
+  padding: 15px 12px;
 }

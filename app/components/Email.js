@@ -1,21 +1,21 @@
 import React, { Component } from 'react';
 
-var Email = React.createClass({
-    render: function() {
+export default() => {
+
         return (
             <div className="email">
                 <dl className="meta dl-horizontal">
                     <dt>From</dt>
-                    <dd>{this.props.from}</dd>
+                    <dd>Name</dd>
 
                     <dt>To</dt>
-                    <dd>{this.props.to}</dd>
+                    <dd>Name</dd>
 
                     <dt>Subject</dt>
-                    <dd>{this.props.subject}</dd>
+                    <dd>Subject</dd>
                 </dl>
-                <div className="body" dangerouslySetInnerHTML={{__html: this.props.body}}></div>
+                <div className="body"></div>
             </div>
         );
-    }
-});
+
+};

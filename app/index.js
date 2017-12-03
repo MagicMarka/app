@@ -5,10 +5,14 @@ require('./css/style.css');
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import $ from "jquery";
 import 'font-awesome/css/font-awesome.css';
 import './css/style.css';
 import App from './App';
+import { BrowserRouter } from 'react-router-dom';
 
 
-ReactDOM.render(<App data='data.json' />, document.getElementById('root'));
+ReactDOM.render((
+    <BrowserRouter>
+        <App />
+    </BrowserRouter>
+), document.getElementById('root'));

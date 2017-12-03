@@ -1,13 +1,13 @@
 import React from 'react';
-import { Modal, Row, Button, Popover, Tooltip, OverlayTrigger, Col, FieldGroup, Form, FormGroup, ControlLabel, FormControl, ButtonGroup } from 'react-bootstrap';
+import { Modal, Row, Button, Popover, Tooltip, OverlayTrigger, Col, FieldGroup, Form, Pagination, ButtonToolbar, ToggleButton, ToggleButtonGroup, FormGroup, ControlLabel, FormControl, ButtonGroup } from 'react-bootstrap';
 
 export default class Top extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {showModal: false};
+        this.state = {showModal: false, active: false, bsStyle: 'default', activePage: 1};
         this.showModal = this.showModal.bind(this);
         this.hideModal = this.hideModal.bind(this);
-
+        this.handleSelect = this.handleSelect.bind(this);
     }
 
     showModal() {
@@ -16,6 +16,11 @@ export default class Top extends React.Component {
 
     hideModal() {
         this.setState({showModal: false});
+    }
+    handleSelect(eventKey) {
+        this.setState({
+            activePage: eventKey,
+        });
     }
     render() {
         const popover = (
@@ -33,6 +38,18 @@ export default class Top extends React.Component {
             <h2>Операции</h2>
             <a href="#" className="btn btn-primary btn-rounded">Валюта: UAH <i className="fa fa-ellipsis-v" aria-hidden="true"></i></a>
             <button className="btn btn-primary btn-rounded" onClick={this.showModal}>Новая операция + </button>
+            {/*<Pagination*/}
+                {/*prev*/}
+                {/*next*/}
+                {/*first*/}
+                {/*last*/}
+                {/*ellipsis*/}
+                {/*boundaryLinks*/}
+                {/*items={20}*/}
+                {/*maxButtons={5}*/}
+                {/*activePage={this.state.activePage}*/}
+                {/*onSelect={this.handleSelect}*/}
+            {/*/>*/}
             <form>
                 <input className="form-control search-form" placeholder="Поиск" type="text"/><button type="submit" className="search-btn"><i className="fa fa-search" aria-hidden="true"></i></button>
             </form>
@@ -46,31 +63,42 @@ export default class Top extends React.Component {
                             <Col md={6}>
                                 <div className="button-block">
                                 <label>Направление операции:</label>
-                                <ButtonGroup>
-                                    <Button bsStyle="primary">Отдаю</Button>
-                                    <Button>Получаю</Button>
-                                </ButtonGroup>
+                                    <ButtonToolbar>
+                                        <ToggleButtonGroup type="radio" name="options" defaultValue={2}>
+                                            <ToggleButton value={1}>Отдаю</ToggleButton>
+                                            <ToggleButton value={2}>Получаю</ToggleButton>
+                                        </ToggleButtonGroup>
+                                    </ButtonToolbar>
                                 </div>
                                 <div className="button-block">
                                 <label>Форма оплаты:</label>
-                                <ButtonGroup>
-                                    <Button>Нал</Button>
-                                    <Button bsStyle="primary">Безнал</Button>
-                                </ButtonGroup>
+                                    <ButtonToolbar>
+                                        <ToggleButtonGroup type="radio" name="options" defaultValue={1}>
+                                            <ToggleButton value={1}>Нал</ToggleButton>
+                                            <ToggleButton value={2}>Безнал</ToggleButton>
+                                        </ToggleButtonGroup>
+                                    </ButtonToolbar>
                                 </div>
                                 <div className="main-form">
                                 <FormGroup controlId="sum">
                                     <ControlLabel>Сумма и валюта платежа</ControlLabel>
-                                    <FormControl type="text" />
+                                    <FormControl type="number" />
+                                    <ButtonToolbar>
+                                        <ToggleButtonGroup type="radio" name="options" defaultValue={2}>
+                                            <ToggleButton value={1}>USD</ToggleButton>
+                                            <ToggleButton value={2}>UAH</ToggleButton>
+                                            <ToggleButton value={3}>EUR</ToggleButton>
+                                        </ToggleButtonGroup>
+                                    </ButtonToolbar>
                                 </FormGroup>
                                     <i className="fa fa-info-circle" aria-hidden="true"></i>
                                     <span>Укажите сумму и валюту платежа</span>
                                 </div>
                                 <div className="main-form">
                                 <FormGroup controlId="placement">
-                                    <ControlLabel>Адрес получения
+                                    <ControlLabel>Город/на баланс
                                         <OverlayTrigger placement="right" overlay={tooltip}>
-                                            <i className="fa fa-info-circle tooltip" aria-hidden="true"></i>
+                                            <i className="fa fa-info-circle" aria-hidden="true"></i>
                                         </OverlayTrigger>
                                     </ControlLabel>
                                     <FormControl type="text" />
