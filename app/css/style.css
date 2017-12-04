@@ -104,7 +104,7 @@ strong, b {
   color: #fff;
   padding: 12px 10px 12px 40px;
 }
- li.nav-item a:hover, li.nav-item a:active {
+ li.nav-item a:hover, li.nav-item a:active, li.nav-item a:focus {
   color: #fff;
   background: #337ab7 !important;
 }
