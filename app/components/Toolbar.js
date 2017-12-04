@@ -15,10 +15,11 @@ export default class Toolbar extends React.Component {
         this.searchDescription = this.searchDescription.bind(this);
         this.searchOrderNumber = this.searchOrderNumber.bind(this);
         this.searchOrderStatus = this.searchOrderStatus.bind(this);
-
+        this.searchByDates = this.searchByDates.bind(this);
     }
 
     handleChangeStart(date) {
+
         this.setState({
             startDate: date,
         });
@@ -28,7 +29,6 @@ export default class Toolbar extends React.Component {
             endDate: date
         });
     }
-
 
     searchDescription(e) {
         let data = this.props.data;
@@ -72,6 +72,33 @@ export default class Toolbar extends React.Component {
         });
     };
 
+    searchByDates(e) {
+        e.preventDefault();
+        let data = this.props.data;
+
+        let startDate = this.state.startDate._d;
+        let endDate = this.state.endDate._d;
+        let formattedStartDate = this.getFormattedDate(startDate);
+        let formattedEndDate = this.getFormattedDate(endDate);
+
+
+        let filter = data.filter(order => {
+            return order.OrderDate >= formattedStartDate && order.OrderDate <= formattedEndDate
+        });
+        this.props.update({
+            data: filter,
+            active: 0,
+            term: formattedStartDate
+        });
+    };
+
+    getFormattedDate(date) {
+        const formattedDate = ('0' + (date.getMonth()+1)).slice(-2) + '/'
+            + ('0' + date.getDate()).slice(-2) + '/'
+            + date.getFullYear();
+        return formattedDate;
+    }
+
     render() {
         return(
             <div className="row">
@@ -104,20 +131,24 @@ export default class Toolbar extends React.Component {
                             onChange={this.handleChangeStart}
                             placeholderText="Дата с"
                             locale="ru"
-
+                            dateFormat="MM/DD/YYYY"
                         />
+                        <form>
 
-                        <DatePicker
-                            className='form-control'
-                            selected={this.state.endDate}
-                            selectsEnd
-                            startDate={this.state.startDate}
-                            endDate={this.state.endDate}
-                            onChange={this.handleChangeEnd}
-                            placeholderText="Дата до"
-                            locale="ru"
+                            <DatePicker
+                                className='form-control'
+                                selected={this.state.endDate}
+                                selectsEnd
+                                startDate={this.state.startDate}
+                                endDate={this.state.endDate}
+                                onChange={this.handleChangeEnd}
+                                placeholderText="Дата до"
+                                locale="ru"
+                                dateFormat="MM/DD/YYYY"
+                            />
+                            <button onClick={this.searchByDates} className="search-btn"><i className="fa fa-search" aria-hidden="true"></i></button>
 
-                        />
+                        </form>
                     </div>
                 </div>
             </div>
