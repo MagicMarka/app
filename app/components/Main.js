@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom'
 import News from "./News";
-import Calendar from "./Calendar";
+import NewCalendar from "./Calendar";
 import Email from './Email'
 import Calls from './Calls'
 import Settings from './Settings'
@@ -13,7 +13,7 @@ export default() =>{
         <Switch>
             <Route exact path='/' render={(props)=><Operations data={'data.json'}/>} />
             <Route path='/news' component={News}/>
-            <Route path='/calendar' component={Calendar}/>
+            <Route path='/calendar' component={NewCalendar}/>
             <Route path='/calls' component={Calls}/>
             <Route path='/settings' component={Settings}/>
             <Route path='/mail' component={Email}/>
