@@ -75,7 +75,6 @@ export default class Toolbar extends React.Component {
     searchByDates(e) {
         e.preventDefault();
         let data = this.props.data;
-
         let startDate = this.state.startDate._d;
         let endDate = this.state.endDate._d;
         let formattedStartDate = this.getFormattedDate(startDate);

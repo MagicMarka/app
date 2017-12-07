@@ -1,13 +1,18 @@
 import React from 'react';
 import { Modal, Row, Button, Popover, Tooltip, OverlayTrigger, Col, FieldGroup, Form, Pagination, ButtonToolbar, ToggleButton, ToggleButtonGroup, FormGroup, ControlLabel, FormControl, ButtonGroup } from 'react-bootstrap';
-
+import $ from 'jquery';
 export default class Top extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {showModal: false, active: false, bsStyle: 'default', activePage: 1};
+        this.state = {showModal: false, active: false, bsStyle: 'default', activePage: 1, sum: '', value: '', payform:'', currency: '' };
         this.showModal = this.showModal.bind(this);
         this.hideModal = this.hideModal.bind(this);
         this.handleSelect = this.handleSelect.bind(this);
+        this.handlePayform = this.handlePayform.bind(this);
+        this.handleCurrency = this.handleCurrency.bind(this);
+        this.handleSum = this.handleSum.bind(this);
+        this.handleText = this.handleText.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     showModal() {
@@ -22,12 +27,39 @@ export default class Top extends React.Component {
             activePage: eventKey,
         });
     }
+    handlePayform(event) {
+        this.setState({payform: event.target.value});
+    }
+    handleCurrency(event) {
+        this.setState({currency: event.target.value});
+    }
+    handleSum(event) {
+        this.setState({sum: event.target.value});
+    }
+    handleText(event) {
+        this.setState({value: event.target.value});
+    }
+    handleSubmit(e) {
+        e.preventDefault();
+
+        var orderData = {};
+        orderData.sum = this.state.sum;
+        orderData.payform = this.state.payform;
+        orderData.currency = this.state.currency;
+        orderData.value = this.state.value;
+        var sendingData =  JSON.stringify(orderData);
+        $.ajax({
+            url: 'http://localhost:4400/data.json',
+            type: 'POST',
+            data: sendingData,
+            contentType: 'application/json'
+        })
+
+
+        console.log(orderData);
+
+    }
     render() {
-        const popover = (
-            <Popover id="modal-popover" title="popover">
-                very popover. such engagement
-            </Popover>
-        );
         const tooltip = (
             <Tooltip id="modal-tooltip">
                 Укажиите город для достаки, либо "баланс" для пополнения баланса
@@ -64,30 +96,30 @@ export default class Top extends React.Component {
                                 <div className="button-block">
                                 <label>Направление операции:</label>
                                     <ButtonToolbar>
-                                        <ToggleButtonGroup type="radio" name="options" defaultValue={2}>
-                                            <ToggleButton value={1}>Отдаю</ToggleButton>
-                                            <ToggleButton value={2}>Получаю</ToggleButton>
+                                        <ToggleButtonGroup type="radio" name="options" defaultValue={'give'} >
+                                            <ToggleButton value={'give'}>Отдаю</ToggleButton>
+                                            <ToggleButton value={'get'}>Получаю</ToggleButton>
                                         </ToggleButtonGroup>
                                     </ButtonToolbar>
                                 </div>
                                 <div className="button-block">
                                 <label>Форма оплаты:</label>
                                     <ButtonToolbar>
-                                        <ToggleButtonGroup type="radio" name="options" defaultValue={1}>
-                                            <ToggleButton value={1}>Нал</ToggleButton>
-                                            <ToggleButton value={2}>Безнал</ToggleButton>
+                                        <ToggleButtonGroup type="radio" name="options" defaultValue={'cash'} payform={this.state.payform} onClick={this.handlePayform}>
+                                            <ToggleButton value={'cash'}>Нал</ToggleButton>
+                                            <ToggleButton value={'non-cash'}>Безнал</ToggleButton>
                                         </ToggleButtonGroup>
                                     </ButtonToolbar>
                                 </div>
                                 <div className="main-form">
                                 <FormGroup controlId="sum">
                                     <ControlLabel>Сумма и валюта платежа</ControlLabel>
-                                    <FormControl type="number" />
+                                    <FormControl type="number" sum={this.state.sum} onChange={this.handleSum} ref="sum"/>
                                     <ButtonToolbar>
-                                        <ToggleButtonGroup type="radio" name="options" defaultValue={2}>
-                                            <ToggleButton value={1}>USD</ToggleButton>
-                                            <ToggleButton value={2}>UAH</ToggleButton>
-                                            <ToggleButton value={3}>EUR</ToggleButton>
+                                        <ToggleButtonGroup type="radio" name="options" defaultValue={'uah'} currency={this.state.currency} onClick={this.handleCurrency}>
+                                            <ToggleButton value={'usd'}>USD</ToggleButton>
+                                            <ToggleButton value={'uah'}>UAH</ToggleButton>
+                                            <ToggleButton value={'eur'}>EUR</ToggleButton>
                                         </ToggleButtonGroup>
                                     </ButtonToolbar>
                                 </FormGroup>
@@ -101,7 +133,7 @@ export default class Top extends React.Component {
                                             <i className="fa fa-info-circle" aria-hidden="true"></i>
                                         </OverlayTrigger>
                                     </ControlLabel>
-                                    <FormControl type="text" />
+                                    <FormControl type="text" value={this.state.value} onChange={this.handleText} />
                                 </FormGroup>
                                 </div>
                                 <div className="main-form">
@@ -127,7 +159,7 @@ export default class Top extends React.Component {
                     </Modal.Body>
             <Modal.Footer className="footer-modal">
                     <Row>
-                        <Button bsStyle="primary"><i className="fa fa-info-circle" aria-hidden="true"></i> Добавить задачу </Button>
+                        <Button bsStyle="primary" onClick={this.handleSubmit}><i className="fa fa-info-circle" aria-hidden="true"></i> Добавить задачу </Button>
                         <Button bsStyle="primary"><i className="fa fa-envelope-o" aria-hidden="true"></i> Поставить задачу </Button>
                     </Row>
             </Modal.Footer>
