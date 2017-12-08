@@ -4,7 +4,7 @@ import $ from 'jquery';
 export default class Top extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {showModal: false, active: false, bsStyle: 'default', activePage: 1, sum: '', value: '', payform:'', currency: '' };
+        this.state = {showModal: false, active: false, bsStyle: 'default', activePage: 1, sum: '', value: '', payform:'', currency: '', data: '' };
         this.showModal = this.showModal.bind(this);
         this.hideModal = this.hideModal.bind(this);
         this.handleSelect = this.handleSelect.bind(this);
@@ -41,23 +41,20 @@ export default class Top extends React.Component {
     }
     handleSubmit(e) {
         e.preventDefault();
-
-        var orderData = {};
-        orderData.sum = this.state.sum;
+        var mainData = this.props.data;
+        let orderData = {};
+        orderData.OrderAmount = this.state.sum;
         orderData.payform = this.state.payform;
         orderData.currency = this.state.currency;
         orderData.value = this.state.value;
-        var sendingData =  JSON.stringify(orderData);
-        $.ajax({
-            url: 'http://localhost:4400/data.json',
-            type: 'POST',
-            data: sendingData,
-            contentType: 'application/json'
-        })
-
-
-        console.log(orderData);
-
+        mainData = mainData.push(orderData);
+        this.props.update({
+            data: mainData,
+        });
+        this.setState({
+            showModal: false
+        });
+    console.log(this.props.data)
     }
     render() {
         const tooltip = (
@@ -159,7 +156,7 @@ export default class Top extends React.Component {
                     </Modal.Body>
             <Modal.Footer className="footer-modal">
                     <Row>
-                        <Button bsStyle="primary" onClick={this.handleSubmit}><i className="fa fa-info-circle" aria-hidden="true"></i> Добавить задачу </Button>
+                        <Button bsStyle="primary" onClick={this.handleSubmit}  ><i className="fa fa-info-circle" aria-hidden="true"></i> Добавить задачу </Button>
                         <Button bsStyle="primary"><i className="fa fa-envelope-o" aria-hidden="true"></i> Поставить задачу </Button>
                     </Row>
             </Modal.Footer>
