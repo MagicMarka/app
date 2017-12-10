@@ -217,21 +217,26 @@ span.close {
   font-size: 14px;
   color: #000000;
 }
-.button-block {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.button-block .btn-toolbar .btn-group{
-  width: 178px;
+
+.block .btn-toolbar .btn-group, .sum-group{
+  width: 300px;
   height: auto;
   margin: 0;
 }
-.button-block .btn-group .btn {
+.half {
   width: 50%;
-
 }
-.button-block button.btn.btn-primary, .btn-default.active {
+.tt {
+  width: 33.3%;
+}
+#sum {
+  width: 70%;
+}
+#currency {
+  width: 30%;
+}
+
+.block button.btn.btn-primary, .btn-default.active {
   background: rgb(34,112,255) !important;
   color: #fff !important;
 }
@@ -285,8 +290,74 @@ span.close {
   display: inline-block;
 
 }
-.btn-toolbar .btn-group{
+.btn-toolbar .btn-group, .input-group {
   display: inline-block;
   height: 34px;
   padding: 15px 12px;
+}
+/*CHAT*/
+.chat-block {
+  height: 100%;
+}
+.chat
+{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.chat li
+{
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+  border-bottom: 1px dotted #B3A9A9;
+}
+
+.chat li.left .chat-body
+{
+  margin-left: 60px;
+}
+
+.chat li.right .chat-body
+{
+  margin-right: 60px;
+}
+
+
+.chat li .chat-body p
+{
+  margin: 0;
+  color: #777777;
+}
+
+.panel .slidedown .glyphicon, .chat .glyphicon
+{
+  margin-right: 5px;
+}
+
+.panel-body
+{
+  overflow-y: scroll;
+  height: 550px;
+}
+.panel-footer {
+  position: fixed;
+  bottom: 0;
+}
+::-webkit-scrollbar-track
+{
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar
+{
+  width: 12px;
+  background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb
+{
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+  background-color: #555;
 }

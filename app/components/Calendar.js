@@ -1,9 +1,7 @@
 import 'rc-calendar/assets/index.css';
 import React from 'react';
-import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import Calendar from 'rc-calendar';
-import DatePicker from 'rc-calendar/lib/Picker';
 import zhCN from 'rc-calendar/lib/locale/zh_CN';
 import enUS from 'rc-calendar/lib/locale/en_US';
 import 'rc-time-picker/assets/index.css';
