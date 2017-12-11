@@ -63,90 +63,166 @@ export default class Top extends React.Component {
     render() {
         return (
             <div>
-                <Row>
-                    <Col xs={4} md={4}><code>&lt;{'Col xs={12} md={8}'} /&gt;</code></Col>
-                    <Col xs={8} md={8}>
-                            <Row>
-                                <Col xs={12}>
-                                    <div className="chat-block">
-                                        <div className="panel-body">
-                                            <ul className="chat">
-                                                <li className="left clearfix">
-                                                    <span className="chat-img pull-left">
-                                                        <img src="http://placehold.it/50/55C1E7/fff&text=U" alt="User Avatar" className="img-circle" />
-                                                    </span>
-                                                    <div className="chat-body clearfix">
-                                                        <div className="header">
-                                                            <strong className="primary-font">Менеджер</strong>
-                                                            <small className="pull-right text-muted">12 mins ago</small>
-                                                        </div>
-                                                        <p>
-                                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare
-                                                            dolor, quis ullamcorper ligula sodales.
-                                                        </p>
-                                                    </div>
-                                                </li>
-                                                <li className="right clearfix">
-                                                    <span class="chat-img pull-right">
-                                                        <img src="http://placehold.it/50/FA6F57/fff&text=ME" alt="User Avatar" className="img-circle" />
-                                                    </span>
-                                                    <div className="chat-body clearfix">
-                                                        <div className="header">
-                                                            <small className=" text-muted">13 mins ago</small>
-                                                            <strong className="pull-right primary-font">Клиент</strong>
-                                                        </div>
-                                                        <p>
-                                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare
-                                                            dolor, quis ullamcorper ligula sodales.
-                                                        </p>
-                                                    </div>
-                                                </li>
-                                                <li className="left clearfix">
-                                                    <span className="chat-img pull-left">
-                                                        <img src="http://placehold.it/50/55C1E7/fff&text=U" alt="User Avatar" class="img-circle" />
-                                                    </span>
-                                                    <div className="chat-body clearfix">
-                                                        <div className="header">
-                                                            <strong className="primary-font">Менеджер</strong>
-                                                            <small class="pull-right text-muted">14 mins ago</small>
-                                                        </div>
-                                                        <p>
-                                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare
-                                                            dolor, quis ullamcorper ligula sodales.
-                                                        </p>
-                                                    </div>
-                                                </li>
-                                                <li className="right clearfix">
-                                                    <span className="chat-img pull-right">
-                                                        <img src="http://placehold.it/50/FA6F57/fff&text=ME" alt="User Avatar" className="img-circle" />
-                                                    </span>
-                                                    <div className="chat-body clearfix">
-                                                        <div className="header">
-                                                            <small className=" text-muted">15 mins ago</small>
-                                                            <strong className="pull-right primary-font">Клиент</strong>
-                                                        </div>
-                                                        <p>
-                                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare
-                                                            dolor, quis ullamcorper ligula sodales.
-                                                        </p>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="panel-footer">
-                                            <div class="input-group">
-                                                <input id="btn-input" type="text" class="form-control input-sm" placeholder="Type your message here..." />
-                                                <span class="input-group-btn">
-                            <button class="btn btn-warning btn-sm" id="btn-chat">
-                                Send</button>
-                        </span>
-                                            </div>
-                                        </div>
+                <div className="row row-broken">
+                    <div className="col-sm-4 col-xs-12">
+                        <div className="col-inside-lg decor-default chat"  >
+                            <div className="chat-list">
+                                <h6>Список чатов</h6>
+                                <div className="list-item">
+                                    <div className="number">Операция № 123-56</div>
+                                    <div className="desc">Обмен валют</div>
+                                </div>
+                                <div className="list-item">
+                                    <div className="number">Операция № 127-54</div>
+                                    <div className="desc">Обмен валют</div>
+                                </div>
+                                <div className="list-item">
+                                    <div className="number">Операция № 129-06</div>
+                                    <div className="desc">Обмен валют</div>
+                                </div>
+                                <div className="list-item">
+                                    <div className="number">Операция № 143-56</div>
+                                    <div className="desc">Обмен валют</div>
+                                </div>
+                                <div className="list-item">
+                                    <div className="number">Операция № 123-13</div>
+                                    <div className="desc">Обмен валют</div>
+                                </div>
+                                <div className="list-item">
+                                    <div className="number">Операция № 193-59</div>
+                                    <div className="desc">Обмен валют</div>
+                                </div>
+                                <div className="list-item">
+                                    <div className="number">Операция № 103-36</div>
+                                    <div className="desc">Обмен валют</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col-sm-8 col-xs-12 chat" >
+                        <div className="col-inside-lg decor-default"  >
+
+                                <h6>Операция № 123-56 </h6>
+                                <button className="btn btn-primary btn-rounded" onClick={this.showModal}>Фикс </button>
+                                <div className="chat-body"><div className="answer left">
+                                    <div className="avatar">
+                                        <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="User name"/>
+                                            <div className="status offline"></div>
                                     </div>
-                                </Col>
-                            </Row>
-                    </Col>
-                </Row>
+                                    <div className="name">Клиент</div>
+                                    <div className="text">
+                                        Lorem ipsum dolor amet, consectetur adipisicing elit Lorem ipsum dolor amet, consectetur adipisicing elit Lorem ipsum dolor amet, consectetur adiping elit
+                                    </div>
+                                    <div className="time">5 min ago</div>
+                                </div>
+                                <div className="answer right">
+                                    <div className="avatar">
+                                        <img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="User name"/>
+                                            <div className="status offline"></div>
+                                    </div>
+                                    <div className="name">Менеджер</div>
+                                    <div className="text">
+                                        Lorem ipsum dolor amet, consectetur adipisicing elit Lorem ipsum dolor amet, consectetur adipisicing elit Lorem ipsum dolor amet, consectetur adiping elit
+                                    </div>
+                                    <div className="time">5 min ago</div>
+                                </div>
+                                <div className="answer left">
+                                    <div className="avatar">
+                                        <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="User name"/>
+                                            <div className="status online"></div>
+                                    </div>
+                                    <div className="name">Клиент</div>
+                                    <div className="text">
+                                        ...
+                                    </div>
+                                    <div className="time">5 min ago</div>
+                                </div>
+                                <div className="answer right">
+                                    <div className="avatar">
+                                        <img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="User name" />
+                                            <div className="status busy"></div>
+                                    </div>
+                                    <div className="name">Менеджер</div>
+                                    <div className="text">
+                                        It is a long established fact that a reader will be. Thanks Mate!
+                                    </div>
+                                    <div className="time">5 min ago</div>
+                                </div>
+                                <div className="answer right">
+                                    <div className="avatar">
+                                        <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="User name"/>
+                                            <div className="status off"></div>
+                                    </div>
+                                    <div class="name">Менеджер</div>
+                                    <div class="text">
+                                        It is a long established fact that a reader will be. Thanks Mate!
+                                    </div>
+                                    <div class="time">5 min ago</div>
+                                </div>
+                                <div className="answer left">
+                                    <div className="avatar">
+                                        <img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="User name"/>
+                                            <div className="status offline"></div>
+                                    </div>
+                                    <div className="name">Клиент</div>
+                                    <div className="text">
+                                        Lorem ipsum dolor amet, consectetur adipisicing elit Lorem ipsum dolor amet, consectetur adipisicing elit Lorem ipsum dolor amet, consectetur adiping elit
+                                    </div>
+                                    <div className="time">5 min ago</div>
+                                </div>
+                                <div className="answer right">
+                                    <div className="avatar">
+                                        <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="User name"/>
+                                            <div className="status offline"></div>
+                                    </div>
+                                    <div className="name">Менеджер</div>
+                                    <div className="text">
+                                        Lorem ipsum dolor amet, consectetur adipisicing elit Lorem ipsum dolor amet, consectetur adipisicing elit Lorem ipsum dolor amet, consectetur adiping elit
+                                    </div>
+                                    <div className="time">5 min ago</div>
+                                </div>
+                                <div className="answer left">
+                                    <div className="avatar">
+                                        <img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="User name"/>
+                                            <div className="status online"></div>
+                                    </div>
+                                    <div className="name">Клиент</div>
+                                    <div className="text">
+                                        ...
+                                    </div>
+                                    <div className="time">5 min ago</div>
+                                </div>
+                                <div className="answer right">
+                                    <div className="avatar">
+                                        <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="User name"/>
+                                            <div className="status busy"></div>
+                                    </div>
+                                    <div className="name">Менеджер</div>
+                                    <div className="text">
+                                        It is a long established fact that a reader will be. Thanks Mate!
+                                    </div>
+                                    <div className="time">5 min ago</div>
+                                </div>
+                                <div className="answer right">
+                                    <div className="avatar">
+                                        <img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="User name"/>
+                                            <div class="status off"></div>
+                                    </div>
+                                    <div className="name">Клиент</div>
+                                    <div className="text">
+                                        It is a long established fact that a reader will be. Thanks Mate!
+                                    </div>
+                                    <div className="time">5 min ago</div>
+                                </div></div>
+                                <div className="answer-add">
+                                    <input placeholder="Ваше сообщение"/>
+                                        <span className="answer-btn answer-btn-1"></span>
+                                        <span className="answer-btn answer-btn-2"></span>
+                                </div>
+
+                        </div>
+                    </div>
+            </div>
                 {/*<Modal show={this.state.showModal} onHide={this.hideModal} dialogClassName="main-modal">*/}
                     {/*<Modal.Header>*/}
                         {/*<Modal.Title>Операция № 131/4 от 27.19.2017 </Modal.Title>*/}
