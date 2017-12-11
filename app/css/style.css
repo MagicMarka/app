@@ -1,6 +1,6 @@
 
 /* =============   Common	============= */
-body {
+body, html {
   font-family: 'Roboto', sans-serif !important;
   color: #455a64;
   font-size: 14px;
@@ -8,9 +8,12 @@ body {
   line-height: 24px;
   overflow-x: hidden;
   background-color: #f3f5f7;
-  height: 100%;
+  height: 100% !important;
+  width: 100%;
   position: relative; }
-
+#root > div {
+  height:100%;
+}
 a {
   text-decoration: none;
   -moz-transition: all 0.3s;
@@ -61,7 +64,7 @@ strong, b {
   -moz-transition: margin-left 0.3s;
   -o-transition: margin-left 0.3s;
   -webkit-transition: margin-left 0.3s;
-  transition: margin-left 0.3s; }
+  transition: margin-left 0.3s;}
 
 .demo-grid-block {
   background: rgba(0, 0, 0, 0.1);
@@ -70,7 +73,10 @@ strong, b {
   margin-bottom: 15px;
   padding: 15px;
   text-align: center; }
-
+main {
+  height: 100%;
+  width: 100%;
+}
 /* =============   Menu  ============= */
 .main-sidebar-nav {
   position: fixed;
@@ -207,6 +213,9 @@ form {
 .main-modal.modal-dialog {
   width: 800px;
 }
+.fix-modal.modal-dialog {
+  width: 500px;
+}
 .container {
   width: 100%;
 }
@@ -222,6 +231,9 @@ span.close {
   width: 300px;
   height: auto;
   margin: 0;
+}
+.fix-modal .sum-group {
+  width: 100%;
 }
 .half {
   width: 50%;
@@ -299,16 +311,16 @@ span.close {
 
 .row.row-broken {
   padding-bottom: 0;
+  height: 100vh;
 }
 .col-inside-lg {
   padding: 20px;
 }
 .chat {
-  height: calc(100vh - 180px);
-}
-.decor-default {
+  height: 100%;
   background-color: #ffffff;
 }
+
 .chat-list h6 {
   font-size: 20px;
   margin: 0 0 20px;
@@ -337,7 +349,7 @@ span.close {
 }
 
 /*****************CHAT BODY *******************/
-.chat-body h6 {
+.chat-body h6, .chat-heading h6  {
   font-size: 20px;
   margin: 0 0 20px;
 }
@@ -367,6 +379,10 @@ span.close {
   display: block;
   border-radius: 20px;
   height: 100%;
+}
+.chat-body {
+  max-height: calc(100vh - 180px);
+  overflow-y: scroll;
 }
 .chat-body .answer .name {
   font-size: 14px;
@@ -426,47 +442,53 @@ span.close {
   left: 4px;
 }
 .chat-body .answer.right .text {
-  background: #7266ba;
+  background: rgb(34,112,255);
   color: #ffffff;
   border-radius: 8px 8px 0 8px;
 }
 .chat-body .answer.right .text:before {
   right: -30px;
-  border-left-color: #7266ba;
+  border-left-color: rgb(34,112,255);
   border-left-width: 12px;
 }
 .chat-body .answer.right .time {
   padding-right: 12px;
   color: #333333;
 }
+.chat-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
 /**************ADD FORM ***************/
-.chat-body .answer-add {
+.answer-add {
   clear: both;
   position: relative;
-  margin: 20px -20px -20px;
+  margin: 0;
   padding: 20px;
-  background: #46be8a;
+  background: #eee;
+  color: #333;
 }
-.chat-body .answer-add input {
+.answer-add input {
   border: none;
   background: none;
   display: block;
   width: 100%;
-  font-size: 16px;
-  line-height: 20px;
+  font-size: 18px;
+  line-height: 40px;
   padding: 0;
-  color: #ffffff;
+  color: #333;
 }
-.chat input {
+input {
   -webkit-appearance: none;
   border-radius: 0;
 }
-.chat-body .answer-add .answer-btn-1 {
+.answer-add .answer-btn-1 {
   background: url("http://91.234.35.26/iwiki-admin/v1.0.0/admin/img/icon-40.png") 50% 50% no-repeat;
   right: 56px;
 }
-.chat-body .answer-add .answer-btn {
+.answer-add .answer-btn {
   display: block;
   cursor: pointer;
   width: 36px;
@@ -475,7 +497,7 @@ span.close {
   top: 50%;
   margin-top: -18px;
 }
-.chat-body .answer-add .answer-btn-2 {
+.answer-add .answer-btn-2 {
   background: url("http://91.234.35.26/iwiki-admin/v1.0.0/admin/img/icon-41.png") 50% 50% no-repeat;
   right: 20px;
 }

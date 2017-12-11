@@ -63,9 +63,8 @@ export default class Top extends React.Component {
     render() {
         return (
             <div>
-                <div className="row row-broken">
                     <div className="col-sm-4 col-xs-12">
-                        <div className="col-inside-lg decor-default chat"  >
+                        <div className="col-inside-lg chat"  >
                             <div className="chat-list">
                                 <h6>Список чатов</h6>
                                 <div className="list-item">
@@ -100,11 +99,13 @@ export default class Top extends React.Component {
                         </div>
                     </div>
                     <div className="col-sm-8 col-xs-12 chat" >
-                        <div className="col-inside-lg decor-default"  >
-
+                        <div className="col-inside-lg " >
+                            <div className="chat-heading">
                                 <h6>Операция № 123-56 </h6>
                                 <button className="btn btn-primary btn-rounded" onClick={this.showModal}>Фикс </button>
-                                <div className="chat-body"><div className="answer left">
+                            </div>
+                                <div className="chat-body">
+                                    <div className="answer left">
                                     <div className="avatar">
                                         <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="User name"/>
                                             <div className="status offline"></div>
@@ -219,108 +220,81 @@ export default class Top extends React.Component {
                                         <span className="answer-btn answer-btn-1"></span>
                                         <span className="answer-btn answer-btn-2"></span>
                                 </div>
-
-                        </div>
                     </div>
             </div>
-                {/*<Modal show={this.state.showModal} onHide={this.hideModal} dialogClassName="main-modal">*/}
-                    {/*<Modal.Header>*/}
-                        {/*<Modal.Title>Операция № 131/4 от 27.19.2017 </Modal.Title>*/}
-                        {/*<span className="close" onClick={this.hideModal}>Закрыть</span>*/}
-                    {/*</Modal.Header>*/}
-                    {/*<Modal.Body>*/}
-                        {/*<Row>*/}
-                            {/*<Col md={6}>*/}
-                                {/*<div className="block">*/}
-                                    {/*<label>Направление операции:</label>*/}
-                                    {/*<ButtonToolbar>*/}
-                                        {/*<ToggleButtonGroup type="radio" name="options" defaultValue={'give'} >*/}
-                                            {/*<ToggleButton className="tt" value={'give'}>Отдаю</ToggleButton>*/}
-                                            {/*<ToggleButton className="tt" value={'get'}>Получаю</ToggleButton>*/}
-                                            {/*<ToggleButton className="tt" value={'change'}>Обмен</ToggleButton>*/}
-                                        {/*</ToggleButtonGroup>*/}
-                                    {/*</ButtonToolbar>*/}
-                                {/*</div>*/}
-                                {/*<div className="block">*/}
-                                    {/*<label>Форма оплаты:</label>*/}
-                                    {/*<ButtonToolbar>*/}
-                                        {/*<ToggleButtonGroup type="radio" name="options" defaultValue={'cash'} payform={this.state.payform} onClick={this.handlePayform}>*/}
-                                            {/*<ToggleButton className="half"  value={'cash'}>Нал</ToggleButton>*/}
-                                            {/*<ToggleButton className="half"  value={'non-cash'}>Безнал</ToggleButton>*/}
-                                        {/*</ToggleButtonGroup>*/}
-                                    {/*</ButtonToolbar>*/}
-                                {/*</div>*/}
-                                {/*<div className="block">*/}
-                                    {/*<FormGroup>*/}
-                                        {/*<label>Сумма и валюта платежа*/}
-                                            {/*<OverlayTrigger placement="right" overlay={tooltip}><i className="fa fa-info-circle" aria-hidden="true" overlay={tooltip}></i></OverlayTrigger>*/}
-                                        {/*</label>*/}
-                                        {/*<InputGroup className="sum-group" >*/}
-                                            {/*<FormControl id="sum" type="text" sum={this.state.sum} onChange={this.handleSum} ref="sum"/>*/}
-                                            {/*<FormControl id="currency" componentClass="select" defaultValue={'uah'} currency={this.state.currency} onClick={this.handleCurrency}>*/}
-                                                {/*<option value={'usd'}>USD</option>*/}
-                                                {/*<option value={'uah'}>UAH</option>*/}
-                                                {/*<option value={'eur'}>EUR</option>*/}
-                                            {/*</FormControl>*/}
-                                        {/*</InputGroup>*/}
-                                    {/*</FormGroup>*/}
-                                {/*</div>*/}
-                                {/*<div className="block">*/}
-                                    {/*<FormGroup controlId="tax">*/}
-                                        {/*<label>Налогообложение:</label>*/}
-                                        {/*<ButtonToolbar>*/}
-                                            {/*<ToggleButtonGroup type="radio" name="tax-options" defaultValue={'at'} tax={this.state.tax} onClick={this.handleTax}>*/}
-                                                {/*<ToggleButton className="tt" value={'no-at'}>Без НДС</ToggleButton>*/}
-                                                {/*<ToggleButton className="tt"  value={'at'}>НДС</ToggleButton>*/}
-                                                {/*<ToggleButton className="tt" value={'vat'}>VAT</ToggleButton>*/}
-                                            {/*</ToggleButtonGroup>*/}
-                                        {/*</ButtonToolbar>*/}
-                                    {/*</FormGroup>*/}
-                                {/*</div>*/}
-                                {/*<div className="block">*/}
-                                    {/*<FormGroup>*/}
-                                        {/*<label>Город</label>*/}
-                                        {/*<FormControl type="text" value={this.state.value} onChange={this.handleText} />*/}
-                                    {/*</FormGroup>*/}
-                                {/*</div>*/}
-                                {/*<div className="block">*/}
-                                    {/*<FormGroup>*/}
-                                        {/*<label>Назначение платежа</label>*/}
-                                        {/*<FormControl type="text" />*/}
-                                    {/*</FormGroup>*/}
-                                {/*</div>*/}
-                                {/*<div className="block">*/}
-                                    {/*<FormGroup>*/}
-                                        {/*<label>Введите адрес</label>*/}
-                                        {/*<FormControl type="text" />*/}
-                                    {/*</FormGroup>*/}
-                                {/*</div>*/}
+                <Modal show={this.state.showModal} onHide={this.hideModal} dialogClassName="fix-modal">
+                    <Modal.Header>
+                        <Modal.Title>Подтверждение сделки</Modal.Title>
+                        <span className="close" onClick={this.hideModal}>Закрыть</span>
+                    </Modal.Header>
+                    <Modal.Body>
+                        <Row>
+                            <Col md={12}>
+                                <div className="block">
+                                    <FormGroup>
+                                        <label>Сумма и валюта платежа</label>
+                                        <InputGroup className="sum-group" >
+                                            <FormControl id="sum" type="text" sum={this.state.sum} onChange={this.handleSum} ref="sum"/>
+                                            <FormControl id="currency" componentClass="select" defaultValue={'uah'} currency={this.state.currency} onClick={this.handleCurrency}>
+                                                <option value={'usd'}>USD</option>
+                                                <option value={'uah'}>UAH</option>
+                                                <option value={'eur'}>EUR</option>
+                                            </FormControl>
+                                        </InputGroup>
+                                    </FormGroup>
+                                </div>
+                                <div className="block">
+                                    <FormGroup>
+                                        <label>Назначение платежа</label>
+                                        <FormControl type="text" value={this.state.value} onChange={this.handleText} />
+                                    </FormGroup>
+                                </div>
+                                <div className="block">
+                                    <FormGroup>
+                                        <label>Beneficiary account (IBAN)</label>
+                                        <FormControl type="text" />
+                                    </FormGroup>
+                                </div>
+                                <div className="block">
+                                    <FormGroup>
+                                        <label>Beneficiary name </label>
+                                        <FormControl type="text" />
+                                    </FormGroup>
+                                </div>
+                                <div className="block">
+                                    <FormGroup>
+                                        <label>Beneficiary adress</label>
+                                        <FormControl type="text" />
+                                    </FormGroup>
+                                </div>
+                                <div className="block">
+                                    <FormGroup>
+                                        <label>Beneficiary bank name</label>
+                                        <FormControl type="text" />
+                                    </FormGroup>
+                                </div>
+                                <div className="block">
+                                    <FormGroup>
+                                        <label>Beneficiary SWIFT code</label>
+                                        <FormControl type="text" />
+                                    </FormGroup>
+                                </div>
+                                <div className="block">
+                                    <FormGroup>
+                                        <label>Beneficiary bank adress</label>
+                                        <FormControl type="text" />
+                                    </FormGroup>
+                                </div>
+                            </Col>
+                        </Row>
+                    </Modal.Body>
+                    <Modal.Footer className="footer-modal">
+                        <Row>
+                            <Button bsStyle="primary" onClick={this.handleSubmit}  ><i className="fa fa-info-circle" aria-hidden="true"></i> Подтвердить</Button>
+                        </Row>
+                    </Modal.Footer>
 
-                            {/*</Col>*/}
-                            {/*<Col md={6}>*/}
-                                {/*<div className="block">*/}
-                                    {/*<FormGroup controlId="formInlineName">*/}
-                                        {/*<label>Тег клиента</label>*/}
-                                        {/*<FormControl type="text" placeholder="А101.8" />*/}
-                                    {/*</FormGroup>*/}
-                                {/*</div>*/}
-                                {/*<div className="block">*/}
-                                    {/*<FormGroup controlId="formControlsTextarea" className="comment-form">*/}
-                                        {/*<ControlLabel>Примечание</ControlLabel>*/}
-                                        {/*<FormControl componentClass="textarea" placeholder="Текст примечания" />*/}
-                                    {/*</FormGroup>*/}
-                                {/*</div>*/}
-                            {/*</Col>*/}
-                        {/*</Row>*/}
-                    {/*</Modal.Body>*/}
-                    {/*<Modal.Footer className="footer-modal">*/}
-                        {/*<Row>*/}
-                            {/*<Button bsStyle="primary" onClick={this.handleSubmit}  ><i className="fa fa-info-circle" aria-hidden="true"></i> Добавить задачу </Button>*/}
-                            {/*<Button bsStyle="primary"><i className="fa fa-envelope-o" aria-hidden="true"></i> Поставить задачу </Button>*/}
-                        {/*</Row>*/}
-                    {/*</Modal.Footer>*/}
-
-                {/*</Modal>*/}
+                </Modal>
             </div>
         );
     }
