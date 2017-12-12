@@ -51,7 +51,6 @@ export default class Top extends React.Component {
         orderData.payform = this.state.payform;
         orderData.currency = this.state.currency;
         orderData.value = this.state.value;
-        mainData = mainData.push(orderData);
         this.props.update({
             data: mainData,
         });

@@ -327,10 +327,10 @@ span.close {
 }
 .chat-list .list-item {
   position: relative;
-  padding: 0 0 0 50px;
+  padding: 20px;
   display: block;
   cursor: pointer;
-  margin: 0 0 20px;
+  border-bottom: 1px solid rgb(34,112,255);
 }
 
 .chat-list .list-item .number {
@@ -401,8 +401,8 @@ span.close {
 }
 .chat-body .answer .text {
   padding: 12px;
-  font-size: 16px;
-  line-height: 26px;
+  font-size: 14px;
+  line-height: 20px;
   position: relative;
 }
 .chat-body .answer.left .text:before {
