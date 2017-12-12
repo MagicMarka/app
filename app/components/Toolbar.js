@@ -61,7 +61,6 @@ export default class Toolbar extends React.Component {
     searchOrderStatus(e) {
         let data = this.props.data;
         let value = e.target.value.toLowerCase();
-
         let filter = data.filter(order => {
             return order.OrderStatus.toLowerCase().includes(value);
         });

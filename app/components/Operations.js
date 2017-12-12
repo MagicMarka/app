@@ -26,13 +26,9 @@ class Operations extends Component {
             });
         });
     }
-    updateData() {
-        load(this.props.data).then(orders => {
-            this.initialData = JSON.parse(orders);
-            this.setState({
-                data: this.initialData
-            });
-        });
+    updateData(config) {
+         this.setState(config);
+
     };
 
 
@@ -41,7 +37,7 @@ class Operations extends Component {
     render() {
         return (
             <div className="operations">
-                <Top data={this.state.data} update={this.updateData.bind(this)} />
+                <Top  />
                 <Toolbar term={this.state.term} data={this.initialData} update={this.updateData.bind(this)} />
                 <Table data={this.state.data} update={this.updateData.bind(this)} />
             </div>

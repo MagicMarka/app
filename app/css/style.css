@@ -520,3 +520,7 @@ input {
   -webkit-appearance: none;
   border-radius: 0;
 }
+.rc-calendar {
+  width: 800px !important;
+  margin: 40px auto;
+}

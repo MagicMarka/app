@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Switch, Route } from 'react-router-dom'
+import { Switch, Route} from 'react-router-dom'
+import createBrowserHistory from 'history/createBrowserHistory';
 import News from "./News";
 import NewCalendar from "./Calendar";
 import Email from './Email'
@@ -7,6 +8,7 @@ import Calls from './Calls'
 import Settings from './Settings'
 import Login from './Login'
 import Operations from "./Operations";
+
 export default() =>{
     return (
     <main>

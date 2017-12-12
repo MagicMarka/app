@@ -3,7 +3,7 @@ import { Modal, Row, Button, Popover, Tooltip, InputGroup, Col, FieldGroup, Form
 export default class Top extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {showModal: false, active: false, bsStyle: 'default', activePage: 1, sum: '', value: '', payform:'', currency: '', data: '', tax: ''};
+        this.state = {showModal: false, active: false, bsStyle: 'default', activePage: 1, sum: '', value: '', payform:'', currency: '',  tax: '', checked: false};
         this.showModal = this.showModal.bind(this);
         this.hideModal = this.hideModal.bind(this);
         this.handleSelect = this.handleSelect.bind(this);
@@ -13,9 +13,20 @@ export default class Top extends React.Component {
         this.handleTax = this.handleTax.bind(this);
         this.handleText = this.handleText.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleChange = this.handleChange.bind(this);
+        this.handleChanging = this.handleChanging.bind(this);
 
     }
-
+    handleChange() {
+        this.setState({
+            checked: !this.state.checked
+        })
+    }
+    handleChanging() {
+        this.setState({
+            checked: !this.state.checked
+        })
+    }
     showModal() {
         this.setState({showModal: true});
     }
@@ -45,26 +56,47 @@ export default class Top extends React.Component {
     }
     handleSubmit(e) {
         e.preventDefault();
-        var mainData = this.props.data;
-        let orderData = {};
-        orderData.OrderAmount = this.state.sum;
-        orderData.payform = this.state.payform;
-        orderData.currency = this.state.currency;
-        orderData.value = this.state.value;
-        this.props.update({
-            data: mainData,
-        });
+        // var mainData = this.props.data;
+        // let orderData = {};
+        // orderData.OrderAmount = this.state.sum;
+        // orderData.payform = this.state.payform;
+        // orderData.currency = this.state.currency;
+        // orderData.value = this.state.value;
+        // this.props.update({
+        //     data: mainData,
+        // });
         this.setState({
             showModal: false
         });
     console.log(this.props.data)
     }
     render() {
+
         const tooltip = (
             <Tooltip id="modal-tooltip">
                 Укажите сумму и валюту платежа
             </Tooltip>
         );
+        const tax = this.state.checked ?
+            <div className="block">
+                <FormGroup controlId="tax">
+                    <label>Налогообложение:</label>
+                    <ButtonToolbar>
+                        <ToggleButtonGroup type="radio" name="tax-options" defaultValue={'at'} tax={this.state.tax} onClick={this.handleTax}>
+                            <ToggleButton className="tt" value={'no-at'}>Без НДС</ToggleButton>
+                            <ToggleButton className="tt"  value={'at'}>НДС</ToggleButton>
+                            <ToggleButton className="tt" value={'vat'}>VAT</ToggleButton>
+                        </ToggleButtonGroup>
+                    </ButtonToolbar>
+                </FormGroup>
+            </div> : null;
+            const purpose = this.state.checked ?
+                <div className="block">
+                <FormGroup>
+                    <label>Назначение платежа</label>
+                    <FormControl type="text" />
+                </FormGroup>
+            </div> : null;
 	return ( 
 		<div className="page-heading">
             <h2>Операции</h2>
@@ -95,8 +127,8 @@ export default class Top extends React.Component {
                                 <label>Форма оплаты:</label>
                                     <ButtonToolbar>
                                         <ToggleButtonGroup type="radio" name="options" defaultValue={'cash'} payform={this.state.payform} onClick={this.handlePayform}>
-                                            <ToggleButton className="half"  value={'cash'}>Нал</ToggleButton>
-                                            <ToggleButton className="half"  value={'non-cash'}>Безнал</ToggleButton>
+                                            <ToggleButton className="half"  value={'cash'} onChange={ this.handleChange }>Нал</ToggleButton>
+                                            <ToggleButton className="half"  value={'non-cash'}  checked={ this.state.checked } onChange={ this.handleChange }>Безнал</ToggleButton>
                                         </ToggleButtonGroup>
                                     </ButtonToolbar>
                                 </div>
@@ -108,37 +140,31 @@ export default class Top extends React.Component {
                                     <InputGroup className="sum-group" >
                                     <FormControl id="sum" type="text" sum={this.state.sum} onChange={this.handleSum} ref="sum"/>
                                     <FormControl id="currency" componentClass="select" defaultValue={'uah'} currency={this.state.currency} onClick={this.handleCurrency}>
-                                            <option value={'usd'}>USD</option>
-                                            <option value={'uah'}>UAH</option>
-                                            <option value={'eur'}>EUR</option>
+                                            <option value={'USD'}>USD</option>
+                                            <option value={'UAH'}>UAH</option>
+                                            <option value={'EUR'}>EUR</option>
+                                        <option value={'GBP'}>GBP</option>
+                                        <option value={'CAD'}>CAD</option>
+                                        <option value={'CHF'}>CHF</option>
+                                        <option value={'SEK'}>SEK</option>
+                                        <option value={'ESP'}>ESP</option>
+                                        <option value={'ZAR'}>ZAR</option>
+                                        <option value={'eur'}>EUR</option>
+
+
                                     </FormControl>
                                     </InputGroup>
                                 </FormGroup>
                                 </div>
-                                <div className="block">
-                                    <FormGroup controlId="tax">
-                                        <label>Налогообложение:</label>
-                                        <ButtonToolbar>
-                                            <ToggleButtonGroup type="radio" name="tax-options" defaultValue={'at'} tax={this.state.tax} onClick={this.handleTax}>
-                                                <ToggleButton className="tt" value={'no-at'}>Без НДС</ToggleButton>
-                                                <ToggleButton className="tt"  value={'at'}>НДС</ToggleButton>
-                                                <ToggleButton className="tt" value={'vat'}>VAT</ToggleButton>
-                                            </ToggleButtonGroup>
-                                        </ButtonToolbar>
-                                    </FormGroup>
-                                </div>
+                                { tax }
+                                { purpose }
                                     <div className="block">
                                 <FormGroup>
                                     <label>Город</label>
                                     <FormControl type="text" value={this.state.value} onChange={this.handleText} />
                                 </FormGroup>
                                 </div>
-                                <div className="block">
-                                    <FormGroup>
-                                        <label>Назначение платежа</label>
-                                        <FormControl type="text" />
-                                    </FormGroup>
-                                </div>
+
                                 <div className="block">
                                 <FormGroup>
                                     <label>Введите адрес</label>

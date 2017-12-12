@@ -1,5 +1,5 @@
 import React from 'react';
-import { Modal, Row, Button,InputGroup, Col, FieldGroup, FormGroup,  FormControl } from 'react-bootstrap';
+import { Modal, Row, Button,InputGroup, Col, FieldGroup, FormGroup,  FormControl, OverlayTrigger, ButtonGroup } from 'react-bootstrap';
 export default class Chat extends React.Component {
     constructor(props) {
         super(props);
@@ -17,12 +17,6 @@ export default class Chat extends React.Component {
         };
         this.showModal = this.showModal.bind(this);
         this.hideModal = this.hideModal.bind(this);
-        this.handleSelect = this.handleSelect.bind(this);
-        this.handlePayform = this.handlePayform.bind(this);
-        this.handleCurrency = this.handleCurrency.bind(this);
-        this.handleSum = this.handleSum.bind(this);
-        this.handleTax = this.handleTax.bind(this);
-        this.handleText = this.handleText.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
 
     }
