@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="85d76e36-3b57-47a8-bac2-a30023c4e286" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/app/components/Main.js" afterPath="$PROJECT_DIR$/app/components/Main.js" />
-      <change beforePath="$PROJECT_DIR$/app/components/Table.js" afterPath="$PROJECT_DIR$/app/components/Table.js" />
-      <change beforePath="$PROJECT_DIR$/app/components/Top.js" afterPath="$PROJECT_DIR$/app/components/Top.js" />
     </list>
     <ignored path="$PROJECT_DIR$/build/" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -38,7 +35,7 @@
         <entry file="file://$PROJECT_DIR$/app/components/Main.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="108">
-              <caret line="15" column="99" lean-forward="false" selection-start-line="15" selection-start-column="99" selection-end-line="15" selection-end-column="99" />
+              <caret line="15" column="105" lean-forward="false" selection-start-line="15" selection-start-column="105" selection-end-line="15" selection-end-column="105" />
               <folding />
             </state>
           </provider>
@@ -247,12 +244,12 @@
       <workItem from="1513023348284" duration="4931000" />
       <workItem from="1513104324721" duration="842000" />
       <workItem from="1513255069510" duration="10275000" />
-      <workItem from="1513598571739" duration="3030000" />
+      <workItem from="1513598571739" duration="3231000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="97619000" />
+    <option name="totallyTimeSpent" value="97820000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -647,7 +644,7 @@
         <state relative-caret-position="-1091">
           <caret line="10" column="27" lean-forward="true" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="27" />
           <folding>
-            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#0#26#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -657,7 +654,7 @@
         <state relative-caret-position="-198">
           <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
           <folding>
-            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#0#26#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -675,7 +672,7 @@
         <state relative-caret-position="360">
           <caret line="50" column="0" lean-forward="true" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
           <folding>
-            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#0#26#0" expanded="false" />
             <element signature="e#305#2234#0" expanded="false" />
           </folding>
         </state>
@@ -730,7 +727,7 @@
     <entry file="file://$PROJECT_DIR$/app/components/Main.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
-          <caret line="15" column="99" lean-forward="false" selection-start-line="15" selection-start-column="99" selection-end-line="15" selection-end-column="99" />
+          <caret line="15" column="105" lean-forward="false" selection-start-line="15" selection-start-column="105" selection-end-line="15" selection-end-column="105" />
           <folding />
         </state>
       </provider>
