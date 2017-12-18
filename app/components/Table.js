@@ -1,6 +1,6 @@
 import React from 'react';
 import Row from './Row.js';
-
+import { FieldGroup, FormControl} from 'react-bootstrap';
 export default ({ data, update }) => {
 	 if (!data) { return (<p>Loading...</p>); }
 
@@ -15,6 +15,7 @@ export default ({ data, update }) => {
             </thead>
             <tbody>
         	{orders}
+            <tr> <th><input id="checkBox" type="checkbox"/></th> <th><FormControl type="text" /></th> <th><FormControl type="text" /></th> <th><FormControl type="text" /></th> <th><FormControl type="text" /></th> <th><FormControl type="text" /></th> <th><FormControl type="text" /></th> <th><FormControl type="text" /></th> <th><FormControl type="text" /></th> <th><FormControl type="text" /></th> <th><FormControl type="text" /></th> <th><FormControl type="text" /></th> <th><FormControl type="text" /></th><th><FormControl type="text" /></th><th><i className="fa fa-plus-circle" aria-hidden="true"></i></th></tr>
         </tbody> 
     </table>
     );

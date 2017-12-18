@@ -5,7 +5,7 @@ import { Modal, Row, Button, Popover, Tooltip, InputGroup, Col, FieldGroup, Form
 export default class Top extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { numChildren: 1, startDate: null, showModal: false, active: false, bsStyle: 'default', activePage: 1, sum: '', value: '', payform:'', currency: '',  tax: '', checked: false};
+        this.state = { checkvalue: 'get', numChildren: 1, startDate: null, showModal: false, active: false, bsStyle: 'default', activePage: 1, sum: '', value: '', payform:'', currency: '',  tax: '', checked: false};
         this.showModal = this.showModal.bind(this);
         this.hideModal = this.hideModal.bind(this);
         this.handleSelect = this.handleSelect.bind(this);
@@ -20,6 +20,7 @@ export default class Top extends React.Component {
         this.handleChangeDate = this.handleChangeDate.bind(this);
         this.onAddChild = this.onAddChild.bind(this);
         this.onRemoveChild = this.onRemoveChild .bind(this);
+        this.checkValue = this.checkValue.bind(this);
 
     }
     handleChangeDate(date) {
@@ -74,6 +75,12 @@ export default class Top extends React.Component {
             numChildren: this.state.numChildren - 1
         });
     }
+    checkValue(event) {
+        this.setState({checkvalue: event.target.value});
+
+    }
+
+
     handleSubmit(e) {
         e.preventDefault();
         // var mainData = this.props.data;
@@ -144,6 +151,12 @@ export default class Top extends React.Component {
         );
         const tax = this.state.checked ?
             <div className="block">
+                <div className="block">
+                    <FormGroup>
+                        <label>Назначение платежа</label>
+                        <FormControl type="text" />
+                    </FormGroup>
+                </div>
                 <FormGroup controlId="tax">
                     <label>Налогообложение:</label>
                     <ButtonToolbar>
@@ -153,13 +166,6 @@ export default class Top extends React.Component {
                             <ToggleButton className="tt" value={'vat'}>VAT</ToggleButton>
                         </ToggleButtonGroup>
                     </ButtonToolbar>
-                </FormGroup>
-            </div> : null;
-        const purpose = this.state.checked ?
-                <div className="block">
-                <FormGroup>
-                    <label>Назначение платежа</label>
-                    <FormControl type="text" />
                 </FormGroup>
             </div> : null;
         const main =
@@ -198,7 +204,6 @@ export default class Top extends React.Component {
         </FormGroup>
     </div>
     { tax }
-    { purpose }
         <div className="block">
             <FormGroup>
                 <label>Город</label>
@@ -261,7 +266,7 @@ export default class Top extends React.Component {
         </div>
                         {delivery}
                         </div>
-
+        const  content = this.state.checkvalue == 'change' ? change : main;
         return (
         <div>
 		<div className="page-heading">
@@ -283,16 +288,16 @@ export default class Top extends React.Component {
                                 <div className="block">
                                 <label>Направление операции:</label>
                                     <ButtonToolbar>
-                                        <ToggleButtonGroup type="radio" name="options" defaultValue={'give'} >
+                                        <ToggleButtonGroup type="radio" name="options"  defaultValue={'give'} >
                                             <ToggleButton className="tt" value={'give'}
-                                                          >Отдаю</ToggleButton>
-                                            <ToggleButton className="tt" value={'get'} >Получаю</ToggleButton>
-                                            <ToggleButton className="tt" value={'change'}
-                                                          onChange={ this.handleChange }>Обмен</ToggleButton>
+                                                          onClick={this.checkValue} >Отдаю</ToggleButton>
+                                            <ToggleButton className="tt"  onClick={this.checkValue}  value={'get'} >Получаю</ToggleButton>
+                                            <ToggleButton className="tt" checkvalue={this.state.value}   value={'change'}
+                                                          onClick={this.checkValue}>Обмен</ToggleButton>
                                         </ToggleButtonGroup>
                                     </ButtonToolbar>
                                 </div>
-                                {main}
+                                {content}
                             </Col>
                             <Col md={6}>
                                 <div className="block">
