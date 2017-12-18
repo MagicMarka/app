@@ -13,7 +13,7 @@ export default() =>{
     return (
     <main>
         <Switch>
-            <Route exact path='/' render={(props)=><Operations data={'https://magicmarka.github.io/build/data.json'}/>} />
+            <Route exact path='/' render={(props)=><Operations data={'https://magicmarka.github.io/app/build/data.json'}/>} />
             <Route path='/news' component={News}/>
             <Route path='/calendar' component={NewCalendar}/>
             <Route path='/calls' component={Calls}/>

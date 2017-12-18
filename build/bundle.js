@@ -41424,7 +41424,7 @@ exports.default = function () {
             _reactRouterDom.Switch,
             null,
             _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', render: function render(props) {
-                    return _react2.default.createElement(_Operations2.default, { data: 'https://magicmarka.github.io/build/data.json' });
+                    return _react2.default.createElement(_Operations2.default, { data: 'https://magicmarka.github.io/app/build/data.json' });
                 } }),
             _react2.default.createElement(_reactRouterDom.Route, { path: '/news', component: _News2.default }),
             _react2.default.createElement(_reactRouterDom.Route, { path: '/calendar', component: _Calendar2.default }),
