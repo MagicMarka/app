@@ -4,20 +4,20 @@ function Row({ order, update, index })  {
 
 	return (
         <tr><td><input id="checkBox" type="checkbox"/></td>
-            <td>{order.OrderNumber}</td>
-            <td>{order.OrderDate}</td>
-            <td>{order.OrderDescription}</td>
+            <td style={{width: '40px'}}>{order.OrderNumber}</td>
+            <td style={{width: '40px'}}>{order.OrderDate}</td>
+            <td style={{width: '280px'}}>{order.OrderDescription}</td>
             <td>{order.OrderStatus}</td>
-            <td>0.00</td>
-            <td>0.00</td>
+            <td>1000000</td>
+            <td>10000000</td>
             <td>UAH</td>
-            <td>26.73</td>
+            <td>3%</td>
             <td>26.68</td>
             <td>{order.OrderAmount}</td>
-            <td>26.68</td>
+            <td>111</td>
             <td>{order.Comment}</td>
-            <td><i className="fa fa-comments-o" aria-hidden="true"></i></td>
-            <td><i className="fa fa-ellipsis-v" aria-hidden="true"></i></td></tr>
+            <td style={{width: '30px'}}><i className="fa fa-comments-o" aria-hidden="true"></i></td>
+            <td style={{width: '30px'}}><i className="fa fa-ellipsis-v" aria-hidden="true"></i></td></tr>
 
 
     );
